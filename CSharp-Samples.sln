@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "String.Intern", "String.Int
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hidden Keywords", "Hidden Keywords\Hidden Keywords.csproj", "{EB3B2045-0029-4184-97C1-02F96E18E7B6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Generic Pointers", "Generic Pointers\Generic Pointers.csproj", "{6B1D81E8-C482-4A79-9611-2445C07F8B30}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{EB3B2045-0029-4184-97C1-02F96E18E7B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EB3B2045-0029-4184-97C1-02F96E18E7B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EB3B2045-0029-4184-97C1-02F96E18E7B6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6B1D81E8-C482-4A79-9611-2445C07F8B30}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6B1D81E8-C482-4A79-9611-2445C07F8B30}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6B1D81E8-C482-4A79-9611-2445C07F8B30}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6B1D81E8-C482-4A79-9611-2445C07F8B30}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
