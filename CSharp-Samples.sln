@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29418.71
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "String.Intern", "String.Intern\String.Intern.csproj", "{1B811EEA-1FD1-4B6C-9FEB-5CE7769E403D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "String.Intern", "String.Intern\String.Intern.csproj", "{1B811EEA-1FD1-4B6C-9FEB-5CE7769E403D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hidden Keywords", "Hidden Keywords\Hidden Keywords.csproj", "{EB3B2045-0029-4184-97C1-02F96E18E7B6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{1B811EEA-1FD1-4B6C-9FEB-5CE7769E403D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1B811EEA-1FD1-4B6C-9FEB-5CE7769E403D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1B811EEA-1FD1-4B6C-9FEB-5CE7769E403D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EB3B2045-0029-4184-97C1-02F96E18E7B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EB3B2045-0029-4184-97C1-02F96E18E7B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EB3B2045-0029-4184-97C1-02F96E18E7B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EB3B2045-0029-4184-97C1-02F96E18E7B6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
