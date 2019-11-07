@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hidden Keywords", "Hidden K
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Generic Pointers", "Generic Pointers\Generic Pointers.csproj", "{6B1D81E8-C482-4A79-9611-2445C07F8B30}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Runtime sizeof(T)", "Runtime sizeof(T)\Runtime sizeof(T).csproj", "{C2A0240B-E071-4E80-9E6F-95C103507F5B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{6B1D81E8-C482-4A79-9611-2445C07F8B30}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6B1D81E8-C482-4A79-9611-2445C07F8B30}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6B1D81E8-C482-4A79-9611-2445C07F8B30}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C2A0240B-E071-4E80-9E6F-95C103507F5B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C2A0240B-E071-4E80-9E6F-95C103507F5B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C2A0240B-E071-4E80-9E6F-95C103507F5B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C2A0240B-E071-4E80-9E6F-95C103507F5B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
