@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Concurrent Collections", "C
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Disposable_Class", "Disposable_Class\Disposable_Class.csproj", "{3501BCCE-E0C0-41AF-9CC4-5F4C6F8AB522}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinkedLists", "LinkedLists\LinkedLists.csproj", "{7D0294D9-92C1-4E24-9021-1EEDF14ECA70}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,10 @@ Global
 		{3501BCCE-E0C0-41AF-9CC4-5F4C6F8AB522}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3501BCCE-E0C0-41AF-9CC4-5F4C6F8AB522}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3501BCCE-E0C0-41AF-9CC4-5F4C6F8AB522}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7D0294D9-92C1-4E24-9021-1EEDF14ECA70}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7D0294D9-92C1-4E24-9021-1EEDF14ECA70}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7D0294D9-92C1-4E24-9021-1EEDF14ECA70}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7D0294D9-92C1-4E24-9021-1EEDF14ECA70}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
