@@ -21,6 +21,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinkedLists", "LinkedLists\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Events", "Events\Events.csproj", "{31D3199A-A07A-407F-A005-A1E40C69BF92}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Generic Variance", "Generic Variance\Generic Variance.csproj", "{4BD3997F-4D88-46A2-9913-4075159A9318}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -63,6 +65,10 @@ Global
 		{31D3199A-A07A-407F-A005-A1E40C69BF92}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{31D3199A-A07A-407F-A005-A1E40C69BF92}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{31D3199A-A07A-407F-A005-A1E40C69BF92}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4BD3997F-4D88-46A2-9913-4075159A9318}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4BD3997F-4D88-46A2-9913-4075159A9318}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4BD3997F-4D88-46A2-9913-4075159A9318}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4BD3997F-4D88-46A2-9913-4075159A9318}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
