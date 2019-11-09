@@ -1,8 +1,9 @@
-﻿using System;
-using System.IO;
-
+﻿
 namespace Method_Deprecation
 {
+    using System;
+    using System.IO;
+
     public class Program
     {
         /// <summary>
