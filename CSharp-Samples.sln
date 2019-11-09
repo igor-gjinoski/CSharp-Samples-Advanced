@@ -23,7 +23,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Events", "Events\Events.csp
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Generic Variance", "Generic Variance\Generic Variance.csproj", "{4BD3997F-4D88-46A2-9913-4075159A9318}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tuples in CSharp7", "Tuples in CSharp7\Tuples in CSharp7.csproj", "{976734F4-D073-4839-B201-BE10339440BC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tuples in CSharp7", "Tuples in CSharp7\Tuples in CSharp7.csproj", "{976734F4-D073-4839-B201-BE10339440BC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Method Deprecation", "Method Deprecation\Method Deprecation.csproj", "{8A2FD933-1451-416C-BE35-310CEDE8D8EF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -75,6 +77,10 @@ Global
 		{976734F4-D073-4839-B201-BE10339440BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{976734F4-D073-4839-B201-BE10339440BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{976734F4-D073-4839-B201-BE10339440BC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8A2FD933-1451-416C-BE35-310CEDE8D8EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8A2FD933-1451-416C-BE35-310CEDE8D8EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8A2FD933-1451-416C-BE35-310CEDE8D8EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8A2FD933-1451-416C-BE35-310CEDE8D8EF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
