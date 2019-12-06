@@ -21,7 +21,7 @@ namespace Hidden_Keywords
             __refvalue(xRef, int) = 10;
             Console.WriteLine(__refvalue(xRef, int)); // Prints "10"
 
-            ParamLength(__arglist(1, 2, x, "Str"));
+            __arglistDemoMethod(__arglist(1, 2, x, "Str"));
         }
 
         /// <summary>
@@ -30,7 +30,7 @@ namespace Hidden_Keywords
         /// If we want to pass a new set of arguments we need to have Method Overloading. 
         /// </summary>
         /// <param name="__arglist"></param>
-        public static void ParamLength(__arglist)
+        public static void __arglistDemoMethod(__arglist)
         {
             var arglistBuilder = new StringBuilder("\n__arglist\n");
 
