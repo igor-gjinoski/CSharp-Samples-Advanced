@@ -2,6 +2,7 @@
 namespace Hidden_Keywords
 {
     using System;
+    using System.Text;
 
     class Program
     {
@@ -20,7 +21,7 @@ namespace Hidden_Keywords
             __refvalue(xRef, int) = 10;
             Console.WriteLine(__refvalue(xRef, int)); // Prints "10"
 
-            Console.WriteLine(ParamLength(__arglist(1, 2, x, "Str"))); // Prints "4"
+            ParamLength(__arglist(1, 2, x, "Str"));
         }
 
         /// <summary>
@@ -29,11 +30,27 @@ namespace Hidden_Keywords
         /// If we want to pass a new set of arguments we need to have Method Overloading. 
         /// </summary>
         /// <param name="__arglist"></param>
-        /// <returns></returns>
-        public static int ParamLength(__arglist)
+        public static void ParamLength(__arglist)
         {
+            var arglistBuilder = new StringBuilder("\n__arglist\n");
+
+            /* Use __arglist only with instance of ArgIterator */
             ArgIterator iterator = new ArgIterator(__arglist);
-            return iterator.GetRemainingCount();
+
+            /* Get the current N of elements in the iterator */
+            /* If we get an element from the iterator the .GetRemainingCount() will show only the remaining */
+            int lengthOfIterator = iterator.GetRemainingCount();
+            arglistBuilder.AppendLine($"Initial values: {lengthOfIterator}");
+
+            while (iterator.GetRemainingCount() > 0)
+            {
+                /* The items in __arglist are TypedReference so we need to cast them! */
+                /* TypedReference.ToObject({item}) */
+                var item = TypedReference.ToObject(iterator.GetNextArg());
+
+                arglistBuilder.AppendLine($"Arg Type: {item.GetType()} --- Arg value: {item} --- Items remaining: {iterator.GetRemainingCount()}");
+            }
+            Console.WriteLine(arglistBuilder.ToString());
         }
     }
 }
