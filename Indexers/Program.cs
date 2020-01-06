@@ -2,6 +2,7 @@
 namespace Indexers
 {
     using System;
+    using System.Collections.Generic;
 
     class Program
     {
@@ -17,7 +18,7 @@ namespace Indexers
         private T[] array;
         private int lastUsedIndex = 0;
 
-        public CustomeCollection() 
+        public CustomeCollection()
             : this(10)
         {
         }
@@ -26,13 +27,21 @@ namespace Indexers
             => array = new T[size];
 
 
+        /* Indexer */
         public T this[uint index]
         {
-            get => index < array.Length
-                ? array[index]
-                : throw new IndexOutOfRangeException();
-
-            set => array[index] = value;
+            get
+            {
+                if (Comparer<uint>.Default.Compare(index, (uint)array.Length) > 0)
+                    throw new ArgumentOutOfRangeException();
+                return array[index];
+            }
+            set
+            {
+                if (Comparer<uint>.Default.Compare(index, (uint)array.Length) > 0)
+                    throw new ArgumentOutOfRangeException();
+                array[index] = value;
+            }
         }
 
 
