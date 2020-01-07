@@ -9,8 +9,16 @@ namespace Parallel
 
     class Program
     {
+        /// <summary>
+        /// Parallel.For
+        /// Executes a for loop in which iterations may run in parallel.
+        /// </summary>
+        /// <param name="dictionary"></param>
+        /// <param name="dictSize"></param>
         static void PopulateDictionaryParallel(ConcurrentDictionary<int, int> dictionary, int dictSize)
         {
+            /* For(Int32, Int32, Action<Int32,ParallelLoopState>) */
+
             Parallel.For(0, dictSize, (i) => dictionary.TryAdd(i, 0));
             Parallel.For(0, dictSize,
                 (i) => {
@@ -19,9 +27,17 @@ namespace Parallel
                         throw new Exception("Error updating. Old value was " + dictionary[i]);
                 });
         }
+
+        /// <summary>
+        /// Parallel.ForEach
+        /// Executes a foreach (For Each in Visual Basic) operation in which iterations may run in parallel.
+        /// </summary>
+        /// <param name="dictionary"></param>
         static int GetTotalValueParallel(ConcurrentDictionary<int, int> dictionary)
         {
             int expectedTotal = dictionary.Count;
+
+            /* ForEach<TSource,TLocal>(IEnumerable<TSource>, ParallelOptions, Func<TLocal>, Func<TSource,ParallelLoopState,TLocal,TLocal>, Action<TLocal>) */
 
             int total = 0;
             Parallel.ForEach(dictionary,
@@ -31,6 +47,10 @@ namespace Parallel
             return total;
         }
 
+        /// <summary>
+        /// ConcurrentDictionary<TKey,TValue>
+        /// Represents a thread-safe collection of key/value pairs that can be accessed by multiple threads concurrently.
+        /// </summary>
         static void Main()
         {
             Stopwatch stopwatch = new Stopwatch();
