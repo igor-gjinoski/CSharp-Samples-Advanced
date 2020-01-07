@@ -31,7 +31,7 @@ namespace Indexers
         public T this[uint index] // With uint we guarantee that passed index will be positive integer
         {
             /* Comparer<uint>.Default.Compare(index, (uint)array.Length) > 0 */
-            /* Check if the index is in boundaries of the array */
+            /* Check if the index is in the boundaries of the array */
             get
             {
                 if (Comparer<uint>.Default.Compare(index, (uint)array.Length) > 0)
