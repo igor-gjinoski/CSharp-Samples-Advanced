@@ -37,7 +37,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Indexers", "Indexers\Indexe
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Parallel", "Parallel\Parallel.csproj", "{119DEEF9-34F5-4E42-A592-C1CEA0DF1FF6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SomeExternalCoolStuff", "SomeExternalCoolStuff\SomeExternalCoolStuff.csproj", "{7EFBC024-806E-4487-8F04-82161F7A4023}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Some External Cool Stuff", "SomeExternalCoolStuff\Some External Cool Stuff.csproj", "{7EFBC024-806E-4487-8F04-82161F7A4023}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
