@@ -35,7 +35,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GenericWhereConstraints", "
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Indexers", "Indexers\Indexers.csproj", "{4E80FBF7-B810-4B95-AC98-72E60832C7B0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Parallel", "Parallel\Parallel.csproj", "{119DEEF9-34F5-4E42-A592-C1CEA0DF1FF6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Parallel", "Parallel\Parallel.csproj", "{119DEEF9-34F5-4E42-A592-C1CEA0DF1FF6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SomeExternalCoolStuff", "SomeExternalCoolStuff\SomeExternalCoolStuff.csproj", "{7EFBC024-806E-4487-8F04-82161F7A4023}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -111,6 +113,10 @@ Global
 		{119DEEF9-34F5-4E42-A592-C1CEA0DF1FF6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{119DEEF9-34F5-4E42-A592-C1CEA0DF1FF6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{119DEEF9-34F5-4E42-A592-C1CEA0DF1FF6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7EFBC024-806E-4487-8F04-82161F7A4023}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7EFBC024-806E-4487-8F04-82161F7A4023}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7EFBC024-806E-4487-8F04-82161F7A4023}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7EFBC024-806E-4487-8F04-82161F7A4023}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
