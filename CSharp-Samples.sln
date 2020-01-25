@@ -37,9 +37,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Indexers", "Indexers\Indexe
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Parallel", "Parallel\Parallel.csproj", "{119DEEF9-34F5-4E42-A592-C1CEA0DF1FF6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Some External Cool Stuff", "SomeExternalCoolStuff\Some External Cool Stuff.csproj", "{7EFBC024-806E-4487-8F04-82161F7A4023}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Some External Cool Stuff", "SomeExternalCoolStuff\Some External Cool Stuff.csproj", "{7EFBC024-806E-4487-8F04-82161F7A4023}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Generic Equality Comparer", "Generic Equality Comparer\Generic Equality Comparer.csproj", "{A610E6EB-CECB-417D-AE5E-9635968562A8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Generic Equality Comparer", "Generic Equality Comparer\Generic Equality Comparer.csproj", "{A610E6EB-CECB-417D-AE5E-9635968562A8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EscapeSpecialCharacters", "EscapeSpecialCharacters\EscapeSpecialCharacters.csproj", "{459872FD-A436-4B67-A86A-10FDB5F8EC3D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -123,6 +125,10 @@ Global
 		{A610E6EB-CECB-417D-AE5E-9635968562A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A610E6EB-CECB-417D-AE5E-9635968562A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A610E6EB-CECB-417D-AE5E-9635968562A8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{459872FD-A436-4B67-A86A-10FDB5F8EC3D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{459872FD-A436-4B67-A86A-10FDB5F8EC3D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{459872FD-A436-4B67-A86A-10FDB5F8EC3D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{459872FD-A436-4B67-A86A-10FDB5F8EC3D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
