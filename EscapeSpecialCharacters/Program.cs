@@ -7,7 +7,7 @@ namespace EscapeSpecialCharacters
 
     class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
         }
 
@@ -16,12 +16,12 @@ namespace EscapeSpecialCharacters
         /// Using CodeDomProvider
         /// escape special characters from text and convert it to escaped C# string
         /// </summary>
-        private static string ToLiteral(string UrlSet)
+        private static string ToLiteral(string text)
         {
             using var writer = new StringWriter();
             using var provider = CodeDomProvider.CreateProvider("CSharp");
 
-            provider.GenerateCodeFromExpression(new CodePrimitiveExpression(UrlSet), writer, null);
+            provider.GenerateCodeFromExpression(new CodePrimitiveExpression(text), writer, null);
 
             return writer.ToString();
         }
