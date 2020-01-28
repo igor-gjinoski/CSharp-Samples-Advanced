@@ -8,87 +8,115 @@ namespace LinkedLists
     {
         public static void Main()
         {
-            LinkedList list = new LinkedList();
-            list.Insert("1");
-            list.Insert("2");
-            list.Insert("3");
-            list.Insert("4");
-            list.Insert("5");
-
-            while (!list.IsEmpty)
-            {
-                Link deletedLink = list.Delete();
-                Console.Write("Removed: " + deletedLink);
-                Console.WriteLine("");
-            }
-
         }
 
-        public class Link
+        public class LinkedList<T> where T : IComparable<T>
         {
-            public string Title { get; set; }
-            public Link NextLink { get; set; }
+            public uint Count { get; set; }
 
-            public Link(string title)
-            {
-                Title = title;
-            }
-
-            public override string ToString()
-            {
-                return Title;
-            }
-        }
-
-        public class LinkedList
-        {
-            private Link _first;
-            public bool IsEmpty
-            {
-                get
-                {
-                    return _first == null;
-                }
-            }
+            public LinkedListNode<T> Head { get; set; }
 
             public LinkedList()
             {
-                _first = null;
+                Head = null;
             }
 
-            public Link Insert(string title)
+            public bool IsEmpty => Head == null;
+
+            public bool Search(T value)
             {
-                // Creates a link, sets its link to the first item and then makes this the first item in the list.
-                Link link = new Link(title);
-                link.NextLink = _first;
-                _first = link;
+                LinkedListNode<T> temp = !IsEmpty ? Head : null;
+                if (temp == null)
+                    return false;
 
-                Console.WriteLine($"Added: {_first}");
+                while (true)
+                {
+                    if (temp.NodeValue.CompareTo(value) == 0)
+                        return true;
 
-                return link;
+                    temp = temp._Next;
+
+                    if (temp == null)
+                        break;
+                }
+                return false;
             }
 
-            public Link Delete()
+            public void Insert(T value)
             {
-                // Gets the first item, and then this to be the one it is linked forward to
-                Link temp = _first;
-                if (_first != null)
-                    _first = _first.NextLink;
+                LinkedListNode<T> node = new LinkedListNode<T>() { NodeValue = value };
+                node._Next = Head;
+                Head = node;
+                Count++;
+            }
 
-                return temp;
+            public void Remove(T value)
+            {
+                LinkedListNode<T> vertex = !IsEmpty ? Head : null;
+                if (vertex == null)
+                    return;
+
+                if (vertex.NodeValue.CompareTo(value) == 0)
+                {
+                    Head = Head._Next;
+                    return;
+                }
+
+                while (vertex != null)
+                {
+                    if (vertex._Next?.NodeValue.CompareTo(value) == 0)
+                    {
+                        LinkedListNode<T> delete = vertex._Next;
+                        vertex._Next = delete._Next;
+                        Count--;
+                        break;
+                    }
+                    vertex = vertex._Next;
+                }
+            }
+
+            public void RemoveAt(int index)
+            {
+                if (index < 0 || index >= Count) throw new IndexOutOfRangeException();
+
+                LinkedListNode<T> vertex = !IsEmpty ? Head : null;
+                if (vertex == null)
+                    return;
+
+                if (index == 0)
+                {
+                    Head = Head._Next;
+                    Count--;
+                }
+
+                for (int i = 0; i < index - 1; i++)
+                {
+                    vertex = vertex._Next;
+
+                }
+                LinkedListNode<T> delete = vertex._Next;
+                vertex._Next = delete._Next;
+                Count--;
             }
 
             public override string ToString()
             {
-                Link currentLink = _first;
+                LinkedListNode<T> currentLink = Head;
                 StringBuilder builder = new StringBuilder();
                 while (currentLink != null)
                 {
-                    builder.Append(currentLink);
-                    currentLink = currentLink.NextLink;
+                    builder.Append($"{currentLink.NodeValue} ");
+                    currentLink = currentLink._Next;
                 }
                 return builder.ToString();
             }
+        }
+
+        public class LinkedListNode<T> where T : IComparable<T>
+        {
+            public LinkedListNode<T> _Next { get; set; }
+
+            public T NodeValue { get; set; }
         }
     }
 }
