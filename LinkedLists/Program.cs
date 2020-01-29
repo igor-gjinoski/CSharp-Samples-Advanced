@@ -134,6 +134,8 @@ namespace LinkedLists
             public LinkedListNode<T> _Next { get; set; }
 
             public T NodeValue { get; set; }
+
+            public override string ToString() => (string)Activator.CreateInstance(typeof(string), NodeValue);
         }
     }
 }
