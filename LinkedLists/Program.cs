@@ -42,7 +42,7 @@ namespace LinkedLists
                 return false;
             }
 
-            public void Insert(T value)
+            public void AddFirst(T value)
             {
                 LinkedListNode<T> node = new LinkedListNode<T>() { NodeValue = value };
                 node._Next = Head;
