@@ -16,9 +16,12 @@ namespace LinkedLists
 
             public LinkedListNode<T> Head { get; set; }
 
+            public LinkedListNode<T> Tail { get; set; }
+
             public LinkedList()
             {
                 Head = null;
+                Tail = null;
             }
 
             public bool IsEmpty => Head == null;
@@ -48,6 +51,20 @@ namespace LinkedLists
                 node._Next = Head;
                 Head = node;
                 Count++;
+
+                if (Count == 1)
+                    Tail = Head;
+            }
+
+            public void AddLast(T value)
+            {
+                LinkedListNode<T> node = new LinkedListNode<T>() { NodeValue = value };
+                Tail._Next = node;
+                Tail = node;
+                Count++;
+
+                if (Count == 1)
+                    Head = Tail;
             }
 
             public void Remove(T value)
