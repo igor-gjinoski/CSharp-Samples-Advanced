@@ -41,7 +41,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Some External Cool Stuff", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Generic Equality Comparer", "Generic Equality Comparer\Generic Equality Comparer.csproj", "{A610E6EB-CECB-417D-AE5E-9635968562A8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EscapeSpecialCharacters", "EscapeSpecialCharacters\EscapeSpecialCharacters.csproj", "{459872FD-A436-4B67-A86A-10FDB5F8EC3D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EscapeSpecialCharacters", "EscapeSpecialCharacters\EscapeSpecialCharacters.csproj", "{459872FD-A436-4B67-A86A-10FDB5F8EC3D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SortedList", "SortedList\SortedList.csproj", "{C67CA2B7-457F-4390-820D-DA0C11F56394}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -129,6 +131,10 @@ Global
 		{459872FD-A436-4B67-A86A-10FDB5F8EC3D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{459872FD-A436-4B67-A86A-10FDB5F8EC3D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{459872FD-A436-4B67-A86A-10FDB5F8EC3D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C67CA2B7-457F-4390-820D-DA0C11F56394}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C67CA2B7-457F-4390-820D-DA0C11F56394}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C67CA2B7-457F-4390-820D-DA0C11F56394}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C67CA2B7-457F-4390-820D-DA0C11F56394}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
