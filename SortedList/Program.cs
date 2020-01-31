@@ -108,6 +108,52 @@ namespace SortedList
                 return focusNode;
             }
         }
+
+        /// <summary>
+        /// Check if the collection contains a value
+        /// </summary>
+        public bool Contains(T value)
+        {
+            if (Root == null) return false;
+
+            return _(Root, false); bool _(Node<T> focusNode, bool isFound)
+            {
+                if (focusNode is null) return false;
+
+                if (value.CompareTo(focusNode.Value) == 0)
+                    return true;
+
+                else
+                {
+                    if (value.CompareTo(focusNode.Value) < 0)
+                        isFound = _(focusNode.Left, isFound);
+                    else isFound = _(focusNode.Right, isFound);
+                }
+                return isFound;
+            }
+        }
+
+        /// <summary>
+        /// Retrieve all values from the collection in IEnumerable<T>
+        /// </summary>
+        public IEnumerable<T> GetAll()
+        {
+            if (Root == null)
+                return Enumerable.Empty<T>();
+
+            return _(Root, new List<T>());
+
+            static IEnumerable<T> _(Node<T> focusNode, ICollection<T> _v)
+            {
+                if (focusNode != null)
+                {
+                    _(focusNode.Left, _v);
+                    _v.Add(focusNode.Value);
+                    _(focusNode.Right, _v);
+                }
+                return _v;
+            }
+        }
     }
 
     internal class Node<T> where T : IComparable<T>
