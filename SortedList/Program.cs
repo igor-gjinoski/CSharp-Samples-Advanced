@@ -27,7 +27,7 @@ namespace SortedList
         {
             foreach (T item in values)
             {
-                Add(item);
+                Insert(item);
                 Size++;
             }
         }
@@ -74,6 +74,38 @@ namespace SortedList
                     }
                 }
                 // All Done
+            }
+        }
+
+        /// <summary>
+        /// Adding new elements using Recursion
+        /// </summary>
+        public void Insert(T value)
+        {
+            if (Root == null)
+            {
+                Root = new Node<T>() { Value = value };
+                return;
+            }
+
+            Root = _Ins(Root, value);
+
+            static Node<T> _Ins(Node<T> focusNode, T value)
+            {
+                if (focusNode == null)
+                {
+                    focusNode = new Node<T>();
+                    focusNode.Value = value;
+                    return focusNode;
+                }
+
+                if (value.CompareTo(focusNode.Value) > 0)
+                {
+                    focusNode.Right = _Ins(focusNode.Right, value);
+                }
+                else focusNode.Left = _Ins(focusNode.Left, value);
+
+                return focusNode;
             }
         }
     }
