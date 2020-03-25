@@ -38,7 +38,9 @@ namespace Swich_In_CSharp_8
         static void Main()
         {
             string summerSeason = SeasonToString(Season.Summer);
-            string monthAndSeason = MonthInSeasonToString(Season.Spring, "January");
+            string monthAndSeason = MonthInSeasonToString(Season.Winter, "January");
+            string country = CountryCodeToFullName(new Country("BG"));
+            int points = CalculateInts(new Point(5, -2));
         }
 
 
@@ -63,8 +65,8 @@ namespace Swich_In_CSharp_8
         static string MonthInSeasonToString(Season season, string month)
             => (season, month) switch
             {
-                (Season.Spring, "January") => $"{month} is in the {Season.Spring.ToString()}",
-                (Season.Spring, "February") => $"{month} is in the {Season.Spring.ToString()}",
+                (Season.Winter, "January") => $"{month} is in the {Season.Winter.ToString()}",
+                (Season.Winter, "February") => $"{month} is in the {Season.Winter.ToString()}",
                 // Rest ...
 
                 (_, _) => throw new ArgumentException(
