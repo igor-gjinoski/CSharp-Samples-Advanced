@@ -45,7 +45,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EscapeSpecialCharacters", "
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SortedList", "SortedList\SortedList.csproj", "{C67CA2B7-457F-4390-820D-DA0C11F56394}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Swich in CSharp 8.0", "Swich_In_CSharp_8.0\Swich in CSharp 8.0.csproj", "{42C838F6-840F-4D2D-B42E-A69EFB69CE59}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Swich in CSharp 8.0", "Swich_In_CSharp_8.0\Swich in CSharp 8.0.csproj", "{42C838F6-840F-4D2D-B42E-A69EFB69CE59}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSharp9.0 - Init only setters", "CSharp9.0 - Init only setters\CSharp9.0 - Init only setters.csproj", "{974605F6-EADA-4DB3-84D8-4EF04150FC39}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -141,6 +143,10 @@ Global
 		{42C838F6-840F-4D2D-B42E-A69EFB69CE59}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{42C838F6-840F-4D2D-B42E-A69EFB69CE59}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{42C838F6-840F-4D2D-B42E-A69EFB69CE59}.Release|Any CPU.Build.0 = Release|Any CPU
+		{974605F6-EADA-4DB3-84D8-4EF04150FC39}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{974605F6-EADA-4DB3-84D8-4EF04150FC39}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{974605F6-EADA-4DB3-84D8-4EF04150FC39}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{974605F6-EADA-4DB3-84D8-4EF04150FC39}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
