@@ -1,5 +1,5 @@
 ﻿
-namespace StructuralPatterns_Decorator
+namespace DesignPatterns.Structural.Decorator
 {
     using System.Threading.Tasks;
 

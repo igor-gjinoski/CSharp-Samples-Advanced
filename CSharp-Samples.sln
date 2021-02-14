@@ -49,7 +49,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Swich in CSharp 8.0", "Swic
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CSharp9.0 - Init only setters", "CSharp9.0 - Init only setters\CSharp9.0 - Init only setters.csproj", "{974605F6-EADA-4DB3-84D8-4EF04150FC39}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "1. DesignPatterns", "DesignPatterns\1. DesignPatterns.csproj", "{C7145B3C-27EA-4A87-B0B7-FE57995A064B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DesignPatterns", "1. DesignPatterns\DesignPatterns.csproj", "{C1122F6D-2C77-4E86-ACAF-8236FC7E0789}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -149,10 +149,10 @@ Global
 		{974605F6-EADA-4DB3-84D8-4EF04150FC39}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{974605F6-EADA-4DB3-84D8-4EF04150FC39}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{974605F6-EADA-4DB3-84D8-4EF04150FC39}.Release|Any CPU.Build.0 = Release|Any CPU
-		{C7145B3C-27EA-4A87-B0B7-FE57995A064B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C7145B3C-27EA-4A87-B0B7-FE57995A064B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C7145B3C-27EA-4A87-B0B7-FE57995A064B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C7145B3C-27EA-4A87-B0B7-FE57995A064B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C1122F6D-2C77-4E86-ACAF-8236FC7E0789}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C1122F6D-2C77-4E86-ACAF-8236FC7E0789}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C1122F6D-2C77-4E86-ACAF-8236FC7E0789}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C1122F6D-2C77-4E86-ACAF-8236FC7E0789}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

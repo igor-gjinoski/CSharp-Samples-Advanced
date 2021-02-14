@@ -6,10 +6,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Creational patterns\" />
-    <Folder Include="Repository pattern\" />
-    <Folder Include="Structural patterns\Decorator\" />
-    <Folder Include="Structural patterns\Adapter\" />
+    <Folder Include="Creational\" />
+    <Folder Include="Repository\" />
+    <Folder Include="Structural\Adapter\" />
   </ItemGroup>
 
 </Project>
