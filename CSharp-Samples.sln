@@ -49,9 +49,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Swich in CSharp 8.0", "Swic
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CSharp9.0 - Init only setters", "CSharp9.0 - Init only setters\CSharp9.0 - Init only setters.csproj", "{974605F6-EADA-4DB3-84D8-4EF04150FC39}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DESIGN PATTERNS", "DESIGN PATTERNS", "{217C76FF-FA4C-4DF6-BACD-A54CFA137E76}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesignPatterns", "DesignPatterns\DesignPatterns.csproj", "{C7145B3C-27EA-4A87-B0B7-FE57995A064B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "1. DesignPatterns", "DesignPatterns\1. DesignPatterns.csproj", "{C7145B3C-27EA-4A87-B0B7-FE57995A064B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -158,9 +156,6 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(NestedProjects) = preSolution
-		{C7145B3C-27EA-4A87-B0B7-FE57995A064B} = {217C76FF-FA4C-4DF6-BACD-A54CFA137E76}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {DEFFBA2A-0813-4F02-B697-FEFED76EDB94}

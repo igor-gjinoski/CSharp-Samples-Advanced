@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
@@ -8,6 +8,8 @@
   <ItemGroup>
     <Folder Include="Creational patterns\" />
     <Folder Include="Repository pattern\" />
+    <Folder Include="Structural patterns\Decorator\" />
+    <Folder Include="Structural patterns\Adapter\" />
   </ItemGroup>
 
 </Project>
