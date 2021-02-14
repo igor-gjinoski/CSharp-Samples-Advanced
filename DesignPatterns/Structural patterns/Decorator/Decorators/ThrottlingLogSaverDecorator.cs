@@ -1,9 +1,7 @@
 ﻿
-namespace StructuralPatterns_Decorator
+namespace DesignPatterns.Structural_patterns.Decorator
 {
-    using System.Linq;
     using System.Threading.Tasks;
-    using static StructuralPatterns_Decorator.DB.WannabeDb;
 
     public class ThrottlingLogSaverDecorator : LogSaverDecorator
     {
@@ -16,7 +14,7 @@ namespace StructuralPatterns_Decorator
         {
             if (!QuotaReached(Id))
             {
-                IncrementUserQuota(Id);
+                IncrementUserQuota();
                 await _logSaverDecorator.SaveLogEntry(Id, log);
                 return;
             }
@@ -25,14 +23,16 @@ namespace StructuralPatterns_Decorator
 
         private bool QuotaReached(string Id)
         {
-            return Db.Where(x => x.Id == Id)
-                     .FirstOrDefault().Quota >= QuotaLimit;
+            bool isQuotaReached = false;
+
+            // ... Check if quota is reached.
+
+            return isQuotaReached;
         }
 
-        private void IncrementUserQuota(string Id)
+        private void IncrementUserQuota()
         {
-            Db.Where(x => x.Id == Id)
-                     .FirstOrDefault().Quota += 1;
+            // ... Increment current quota with one.
         }
     }
 }

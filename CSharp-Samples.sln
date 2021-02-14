@@ -51,7 +51,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CSharp9.0 - Init only sette
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DESIGN PATTERNS", "DESIGN PATTERNS", "{217C76FF-FA4C-4DF6-BACD-A54CFA137E76}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StructuralPatterns_Decorator", "StructuralPatterns_Decorator\StructuralPatterns_Decorator.csproj", "{E2081746-A2E6-4E11-9008-EAD2AEB1C8C8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesignPatterns", "DesignPatterns\DesignPatterns.csproj", "{C7145B3C-27EA-4A87-B0B7-FE57995A064B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -151,16 +151,16 @@ Global
 		{974605F6-EADA-4DB3-84D8-4EF04150FC39}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{974605F6-EADA-4DB3-84D8-4EF04150FC39}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{974605F6-EADA-4DB3-84D8-4EF04150FC39}.Release|Any CPU.Build.0 = Release|Any CPU
-		{E2081746-A2E6-4E11-9008-EAD2AEB1C8C8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E2081746-A2E6-4E11-9008-EAD2AEB1C8C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E2081746-A2E6-4E11-9008-EAD2AEB1C8C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E2081746-A2E6-4E11-9008-EAD2AEB1C8C8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C7145B3C-27EA-4A87-B0B7-FE57995A064B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C7145B3C-27EA-4A87-B0B7-FE57995A064B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C7145B3C-27EA-4A87-B0B7-FE57995A064B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C7145B3C-27EA-4A87-B0B7-FE57995A064B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{E2081746-A2E6-4E11-9008-EAD2AEB1C8C8} = {217C76FF-FA4C-4DF6-BACD-A54CFA137E76}
+		{C7145B3C-27EA-4A87-B0B7-FE57995A064B} = {217C76FF-FA4C-4DF6-BACD-A54CFA137E76}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {DEFFBA2A-0813-4F02-B697-FEFED76EDB94}

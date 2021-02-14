@@ -1,21 +1,10 @@
 ﻿
 namespace StructuralPatterns_Decorator
 {
-    using StructuralPatterns_Decorator.DB;
-    using System.Collections.Generic;
-
     class Program
     {
         static void Main()
         {
-            WannabeDb.Db.Add(
-                new LogEntry() 
-                { 
-                    Id = "x1", 
-                    Quota = 0, 
-                    Logs = new List<string>() 
-                });
-
             ILogSaver logSaver = 
                 new ThrottlingLogSaverDecorator(
                     new LogSaver());
