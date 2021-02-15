@@ -5,6 +5,6 @@ namespace DesignPatterns.Structural.Decorator
 
     public interface ILogSaver
     {
-        Task SaveLogEntry(string applicationId, string log);
+        Task SaveLogEntry(string Id, string log);
     }
 }

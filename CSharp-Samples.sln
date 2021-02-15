@@ -49,7 +49,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Swich in CSharp 8.0", "Swic
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CSharp9.0 - Init only setters", "CSharp9.0 - Init only setters\CSharp9.0 - Init only setters.csproj", "{974605F6-EADA-4DB3-84D8-4EF04150FC39}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DesignPatterns", "1. DesignPatterns\DesignPatterns.csproj", "{C1122F6D-2C77-4E86-ACAF-8236FC7E0789}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DesignPatterns-Repository", "DesignPatterns-Repository\DesignPatterns-Repository.csproj", "{E48999BA-0BE5-4FDF-BD7E-F27C97D9589A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DesignPatterns-Decorator", "DesignPatterns-Decorator\DesignPatterns-Decorator.csproj", "{C6DEF3DB-A6D4-41F9-91BD-7BA1EE377418}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -149,10 +151,14 @@ Global
 		{974605F6-EADA-4DB3-84D8-4EF04150FC39}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{974605F6-EADA-4DB3-84D8-4EF04150FC39}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{974605F6-EADA-4DB3-84D8-4EF04150FC39}.Release|Any CPU.Build.0 = Release|Any CPU
-		{C1122F6D-2C77-4E86-ACAF-8236FC7E0789}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C1122F6D-2C77-4E86-ACAF-8236FC7E0789}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C1122F6D-2C77-4E86-ACAF-8236FC7E0789}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C1122F6D-2C77-4E86-ACAF-8236FC7E0789}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E48999BA-0BE5-4FDF-BD7E-F27C97D9589A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E48999BA-0BE5-4FDF-BD7E-F27C97D9589A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E48999BA-0BE5-4FDF-BD7E-F27C97D9589A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E48999BA-0BE5-4FDF-BD7E-F27C97D9589A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C6DEF3DB-A6D4-41F9-91BD-7BA1EE377418}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C6DEF3DB-A6D4-41F9-91BD-7BA1EE377418}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C6DEF3DB-A6D4-41F9-91BD-7BA1EE377418}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C6DEF3DB-A6D4-41F9-91BD-7BA1EE377418}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

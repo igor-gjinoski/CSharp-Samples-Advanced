@@ -5,10 +5,4 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
-  <ItemGroup>
-    <Folder Include="Creational\" />
-    <Folder Include="Repository\" />
-    <Folder Include="Structural\Adapter\" />
-  </ItemGroup>
-
 </Project>

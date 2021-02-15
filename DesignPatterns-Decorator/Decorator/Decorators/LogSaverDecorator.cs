@@ -12,6 +12,6 @@ namespace DesignPatterns.Structural.Decorator
             _logSaverDecorator = logSaverDecorato;
 
 
-        public abstract Task SaveLogEntry(string applicationId, string log);
+        public abstract Task SaveLogEntry(string Id, string log);
     }
 }
