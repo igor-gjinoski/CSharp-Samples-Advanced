@@ -1,8 +1,10 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using DesignPatterns_Repository.Data;
 
 namespace DesignPatterns_Repository
 {
@@ -17,6 +19,10 @@ namespace DesignPatterns_Repository
 
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddDbContext<ApplicationDbContext>(config =>
+                config.UseSqlServer(
+                    Configuration.GetConnectionString("DefaultConnection")));
+
             services.AddControllersWithViews();
         }
 
@@ -28,14 +34,13 @@ namespace DesignPatterns_Repository
             }
             else
             {
-                app.UseExceptionHandler("/Home/Error");
                 app.UseHsts();
             }
+
             app.UseHttpsRedirection();
             app.UseStaticFiles();
 
             app.UseRouting();
-
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
