@@ -7,8 +7,6 @@ namespace DesignPatterns.Structural.Decorator
     {
         public Task SaveLogEntry(string Id, string log)
         {
-            System.Console.WriteLine("SaveLogEntry");
-
             return Task.FromResult<object>(null);
         }
     }
