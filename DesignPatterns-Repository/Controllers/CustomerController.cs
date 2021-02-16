@@ -1,19 +1,83 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using System.Threading.Tasks;
+﻿using System.Data;
+using System.Linq;
+using DesignPatterns_Repository.Data;
+using DesignPatterns_Repository.UnitOfWork;
+using Microsoft.AspNetCore.Mvc;
 
 namespace DesignPatterns_Repository.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class CustomerController : ControllerBase
+    public class CustomerController : Controller
     {
-        public CustomerController()
+        private readonly IUnitOfWork _unitOfWork;
+
+        public CustomerController(IUnitOfWork unitOfWork)
+            => _unitOfWork = unitOfWork;
+
+        [Route("Index")]
+        public IActionResult Index()
         {
+            return Ok(_unitOfWork.Repository.Get().ToList());
         }
 
-        public async Task<IActionResult> Index()
+
+        [HttpPost]
+        [Route("Create")]
+        public IActionResult Create([FromBody]Customer Customer)
         {
-            return await Task.Run(() => Ok());
+            try
+            {
+                _unitOfWork.Repository.Insert(Customer);
+                _unitOfWork.Commit();
+                return Ok("Customer Created!");
+            }
+            catch (DataException)
+            {
+                return BadRequest("Unable to Create Customer object.");
+            }
+        }
+
+
+        [HttpGet]
+        [Route("GetById")]
+        public IActionResult GetByID(int Id)
+        {
+            try
+            {
+                return Ok(_unitOfWork.Repository.GetByID(Id));
+            }
+            catch (DataException)
+            {
+                return BadRequest($"Unable to Find Customer with id: {Id}.");
+            }
+        }
+
+
+        [HttpDelete]
+        [Route("Delete")]
+        public ActionResult Delete(int id)
+        {
+            try
+            {
+                _unitOfWork.Repository.Delete(id);
+                return Ok();
+            }
+            catch (DataException)
+            {
+                return BadRequest($"Unable to Delete Customer with id: {id}.");
+            }
+        }
+
+
+        [HttpPost]
+        [Route("DeleteConfirmed")]
+        public ActionResult DeleteConfirmed(int id)
+        {
+            var Customer = _unitOfWork.Repository.GetByID(id);
+            _unitOfWork.Repository.Delete(id);
+            _unitOfWork.Commit();
+            return RedirectToAction("Index");
         }
     }
 }

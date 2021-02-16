@@ -5,6 +5,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using DesignPatterns_Repository.Data;
+using DesignPatterns_Repository.Services;
+using DesignPatterns_Repository.UnitOfWork;
 
 namespace DesignPatterns_Repository
 {
@@ -22,6 +24,9 @@ namespace DesignPatterns_Repository
             services.AddDbContext<ApplicationDbContext>(config =>
                 config.UseSqlServer(
                     Configuration.GetConnectionString("DefaultConnection")));
+
+            services.AddScoped<IUnitOfWork, UnitOfWork.UnitOfWork>();
+            services.AddScoped<ICustomerService, CustomerService>();
 
             services.AddControllersWithViews();
         }
