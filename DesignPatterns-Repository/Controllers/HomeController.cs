@@ -1,15 +1,11 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
 
 namespace DesignPatterns_Repository.Controllers
 {
-    public class HomeController : Controller
+    public class CustomerController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
-
-        public HomeController(ILogger<HomeController> logger)
+        public CustomerController()
         {
-            _logger = logger;
         }
 
         public IActionResult Index()
