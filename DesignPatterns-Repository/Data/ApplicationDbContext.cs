@@ -11,7 +11,7 @@ namespace DesignPatterns_Repository.Data
         {
         }
 
-        public DbSet<Customer> Customer { get; set; }
+        public DbSet<Customer> Customers { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {

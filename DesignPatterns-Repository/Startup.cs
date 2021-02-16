@@ -38,16 +38,11 @@ namespace DesignPatterns_Repository
             }
 
             app.UseHttpsRedirection();
-            app.UseStaticFiles();
-
             app.UseRouting();
-            app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapControllerRoute(
-                    name: "default",
-                    pattern: "{controller=Customer}/{action=Index}/{id?}");
+                endpoints.MapControllers();
             });
         }
     }
