@@ -5,7 +5,7 @@ namespace DesignPatterns_Repository.UnitOfWork
 {
     public interface IUnitOfWork : IDisposable
     {
-        ICustomerRepository Repository { get; }
+        ICustomerRepository CustomerRepository { get; }
 
         void Commit();
     }

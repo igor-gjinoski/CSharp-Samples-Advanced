@@ -18,7 +18,7 @@ namespace DesignPatterns_Repository.Controllers
         [Route("Index")]
         public IActionResult Index()
         {
-            return Ok(_unitOfWork.Repository.Get().ToList());
+            return Ok(_unitOfWork.CustomerRepository.Get().ToList());
         }
 
 
@@ -28,7 +28,7 @@ namespace DesignPatterns_Repository.Controllers
         {
             try
             {
-                _unitOfWork.Repository.Insert(Customer);
+                _unitOfWork.CustomerRepository.Insert(Customer);
                 _unitOfWork.Commit();
                 return Ok("Customer Created!");
             }
@@ -45,7 +45,7 @@ namespace DesignPatterns_Repository.Controllers
         {
             try
             {
-                return Ok(_unitOfWork.Repository.GetByID(Id));
+                return Ok(_unitOfWork.CustomerRepository.GetByID(Id));
             }
             catch (DataException)
             {
@@ -60,7 +60,7 @@ namespace DesignPatterns_Repository.Controllers
         {
             try
             {
-                return Ok(_unitOfWork.Repository.FindByName(name));
+                return Ok(_unitOfWork.CustomerRepository.FindByName(name));
             }
             catch (DataException)
             {
@@ -75,7 +75,7 @@ namespace DesignPatterns_Repository.Controllers
         {
             try
             {
-                _unitOfWork.Repository.Delete(id);
+                _unitOfWork.CustomerRepository.Delete(id);
                 return Ok();
             }
             catch (DataException)
@@ -89,7 +89,7 @@ namespace DesignPatterns_Repository.Controllers
         [Route("DeleteConfirmed")]
         public ActionResult DeleteConfirmed(int id)
         {
-            _unitOfWork.Repository.Delete(id);
+            _unitOfWork.CustomerRepository.Delete(id);
             _unitOfWork.Commit();
             return RedirectToAction("Index");
         }

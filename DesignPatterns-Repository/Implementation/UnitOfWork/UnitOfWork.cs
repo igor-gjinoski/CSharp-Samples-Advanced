@@ -14,7 +14,7 @@ namespace DesignPatterns_Repository.UnitOfWork
             _applicationContext = applicationContext;
         }
 
-        public ICustomerRepository Repository
+        public ICustomerRepository CustomerRepository
         {
             get
             {
