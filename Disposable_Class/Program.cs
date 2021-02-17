@@ -6,6 +6,13 @@ namespace Disposable_Class
 
     using Microsoft.Win32.SafeHandles;
 
+    class Program
+    {
+        static void Main()
+        {
+        }
+    }
+
     public class Disposable : IDisposable
     {
         private readonly IntPtr _unmanagedResource;

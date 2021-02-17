@@ -1,6 +1,14 @@
 ﻿
 namespace GenericWhereConstraints
 {
+    class Program
+    {
+        static void Main()
+        {
+        }
+    }
+
+
     class TmpClass<T, U>
         where T : class //  T is reference type
         where U : struct // U is value type
