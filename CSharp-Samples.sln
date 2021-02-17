@@ -51,7 +51,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CSharp9.0 - Init only sette
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DesignPatterns-Decorator", "DesignPatterns-Decorator\DesignPatterns-Decorator.csproj", "{C6DEF3DB-A6D4-41F9-91BD-7BA1EE377418}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesignPatterns-Repository", "DesignPatterns-Repository\DesignPatterns-Repository.csproj", "{C9256303-25E0-4436-84C0-79ACA02B8D1A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DesignPatterns-Repository", "DesignPatterns-Repository\DesignPatterns-Repository.csproj", "{C9256303-25E0-4436-84C0-79ACA02B8D1A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExtremelyFastReflection", "ExtremelyFastReflection\ExtremelyFastReflection.csproj", "{AF8FE2AC-8D36-4348-9F4C-C0425F3C4A43}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -159,6 +161,10 @@ Global
 		{C9256303-25E0-4436-84C0-79ACA02B8D1A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C9256303-25E0-4436-84C0-79ACA02B8D1A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C9256303-25E0-4436-84C0-79ACA02B8D1A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AF8FE2AC-8D36-4348-9F4C-C0425F3C4A43}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AF8FE2AC-8D36-4348-9F4C-C0425F3C4A43}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AF8FE2AC-8D36-4348-9F4C-C0425F3C4A43}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AF8FE2AC-8D36-4348-9F4C-C0425F3C4A43}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
