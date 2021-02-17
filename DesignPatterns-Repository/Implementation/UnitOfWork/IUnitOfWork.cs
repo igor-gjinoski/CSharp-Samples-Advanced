@@ -1,9 +1,10 @@
-﻿using DesignPatterns_Repository.Data;
+﻿using System;
+using DesignPatterns_Repository.Data;
 using DesignPatterns_Repository.Repository;
 
 namespace DesignPatterns_Repository.UnitOfWork
 {
-    public interface IUnitOfWork
+    public interface IUnitOfWork : IDisposable
     {
         IRepository<Customer> Repository { get; }
 

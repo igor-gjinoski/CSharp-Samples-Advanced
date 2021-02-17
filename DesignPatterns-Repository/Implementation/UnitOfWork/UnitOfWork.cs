@@ -8,7 +8,6 @@ namespace DesignPatterns_Repository.UnitOfWork
         private readonly ApplicationDbContext _applicationContext;
         private Repository<Customer> _customers;
 
-
         public UnitOfWork(ApplicationDbContext applicationContext)
         {
             _applicationContext = applicationContext;
@@ -23,9 +22,14 @@ namespace DesignPatterns_Repository.UnitOfWork
             }
         }
 
-        public async void Commit()
+        public void Commit()
         {
-            await _applicationContext.SaveChangesAsync();
+            _applicationContext.SaveChanges();
+        }
+
+        public void Dispose()
+        {
+            _applicationContext.Dispose();
         }
     }
 }

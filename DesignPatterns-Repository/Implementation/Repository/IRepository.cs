@@ -12,8 +12,7 @@ namespace DesignPatterns_Repository.Repository
 
         IEnumerable<TEntity> Get(
             Expression<Func<TEntity, bool>> filter = null,
-            Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>> orderBy = null,
-            string includeProperties = "");
+            Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>> orderBy = null);
 
 
         IEnumerable<TEntity> GetWithRawSql(string query, params object[] parameters);
