@@ -1,24 +1,25 @@
 ﻿using DesignPatterns_Repository.Data;
-using DesignPatterns_Repository.Repository;
+using DesignPatterns_Repository.Repository.CustomerRepository;
 
 namespace DesignPatterns_Repository.UnitOfWork
 {
     public class UnitOfWork : IUnitOfWork
     {
+        private ICustomerRepository _customers;
+
         private readonly ApplicationDbContext _applicationContext;
-        private Repository<Customer> _customers;
 
         public UnitOfWork(ApplicationDbContext applicationContext)
         {
             _applicationContext = applicationContext;
         }
 
-        public IRepository<Customer> Repository
+        public ICustomerRepository Repository
         {
             get
             {
                 return _customers ??
-                    (_customers = new Repository<Customer>(_applicationContext));
+                    (_customers = new CustomerRepository(_applicationContext));
             }
         }
 

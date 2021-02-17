@@ -54,6 +54,21 @@ namespace DesignPatterns_Repository.Controllers
         }
 
 
+        [HttpGet]
+        [Route("FindAll")]
+        public IActionResult FindAll(string name)
+        {
+            try
+            {
+                return Ok(_unitOfWork.Repository.FindByName(name));
+            }
+            catch (DataException)
+            {
+                return BadRequest($"Unable to Find Customers with name: {name}.");
+            }
+        }
+
+
         [HttpDelete]
         [Route("Delete")]
         public ActionResult Delete(int id)
@@ -74,7 +89,6 @@ namespace DesignPatterns_Repository.Controllers
         [Route("DeleteConfirmed")]
         public ActionResult DeleteConfirmed(int id)
         {
-            var Customer = _unitOfWork.Repository.GetByID(id);
             _unitOfWork.Repository.Delete(id);
             _unitOfWork.Commit();
             return RedirectToAction("Index");

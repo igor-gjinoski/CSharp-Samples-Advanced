@@ -1,7 +1,8 @@
-﻿using DesignPatterns_Repository.Data;
-using DesignPatterns_Repository.Repository;
+﻿using System.Linq;
+using System.Collections.Generic;
+using DesignPatterns_Repository.Data;
 
-namespace DesignPatterns_Repository.CustomerRepository
+namespace DesignPatterns_Repository.Repository.CustomerRepository
 {
     public class CustomerRepository : Repository<Customer>, ICustomerRepository
     {
@@ -16,6 +17,14 @@ namespace DesignPatterns_Repository.CustomerRepository
             { 
                 return _context as ApplicationDbContext; 
             }
+        }
+
+        public IEnumerable<string> FindByName(string name)
+        {
+            return ApplicationDbContext.Customers
+                .Where(x => x.FirstName.Contains(name)
+                         || x.LastName.Contains(name))
+                .Select(x => $"Customer: {x.FirstName} {x.LastName}");
         }
     }
 }
