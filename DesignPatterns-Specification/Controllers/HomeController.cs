@@ -9,10 +9,11 @@ namespace DesignPatterns_Specification.Controllers
     {
         public IActionResult Index()
         {
-            var gRating = new FileSystemLogSpecification();
+            var fileSystemLog = new FileSystemLogSpecification("LOG");
             var repository = new LoggerRepository();
 
             // TODO:
+            bool log = repository.LogInfo(fileSystemLog);
 
             return Ok();
         }
