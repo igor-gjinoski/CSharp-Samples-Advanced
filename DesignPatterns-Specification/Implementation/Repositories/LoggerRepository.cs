@@ -1,6 +1,4 @@
-﻿
-using System.Linq;
-using System.Collections.Generic;
+﻿using System.Linq;
 using NHibernate;
 
 namespace DesignPatterns_Specification.Implementation
@@ -12,15 +10,21 @@ namespace DesignPatterns_Specification.Implementation
     public abstract class Repository<T>
         where T : Entity
     {
-        public IReadOnlyList<T> Find(Specification<T> specification, int page = 0, int pageSize = 100)
+        public bool LogInfo(Specification<T> specification)
         {
             using (ISession session = SessionFactory.OpenSession())
             {
-                return session.Query<T>()
-                    .Where(specification.ToExpression())
-                    .Skip(page * pageSize)
-                    .Take(pageSize)
-                    .ToList();
+                bool isOk;
+                try
+                {
+                    session.Query<T>().Where(specification.ToExpression());
+                    isOk = true;
+                }
+                finally
+                {
+                    isOk = false;
+                }
+                return isOk;
             }
         }
     }
