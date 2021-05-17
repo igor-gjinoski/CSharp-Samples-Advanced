@@ -1,5 +1,4 @@
-﻿
-using System;
+﻿using System;
 using System.Linq.Expressions;
 
 namespace DesignPatterns_Specification.Implementation
@@ -16,7 +15,7 @@ namespace DesignPatterns_Specification.Implementation
 
         public override Expression<Func<Log, bool>> ToExpression()
         {
-            throw new NotImplementedException();
+            return log => log.Id <= 11;
         }
     }
 }

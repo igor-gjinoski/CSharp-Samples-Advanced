@@ -7,10 +7,11 @@ namespace SortedList
 
     class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
         }
     }
+
 
     public class SortedList<T> where T : IComparable<T>
     {

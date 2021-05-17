@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Linq;
-using System.Collections.Generic;
 using System.Linq.Expressions;
+using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 
 namespace DesignPatterns_Repository.Repository
@@ -74,6 +74,8 @@ namespace DesignPatterns_Repository.Repository
             _dbSet.Remove(entityToDelete);
         }
     }
+
+    
 
     public static class Extensions
     {
