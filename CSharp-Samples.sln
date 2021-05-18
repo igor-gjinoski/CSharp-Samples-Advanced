@@ -63,6 +63,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClassArchitecture", "ClassA
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Generic Object Mapping", "Generic Object Mapping\Generic Object Mapping.csproj", "{6AC91295-EB58-440A-B284-764F050E84F7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ErrorHandling_GenericResponse", "ErrorHandling_GenericResponse\ErrorHandling_GenericResponse.csproj", "{BE490168-2597-4F57-A800-329177EC5E94}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -185,6 +187,10 @@ Global
 		{6AC91295-EB58-440A-B284-764F050E84F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6AC91295-EB58-440A-B284-764F050E84F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6AC91295-EB58-440A-B284-764F050E84F7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BE490168-2597-4F57-A800-329177EC5E94}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BE490168-2597-4F57-A800-329177EC5E94}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BE490168-2597-4F57-A800-329177EC5E94}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BE490168-2597-4F57-A800-329177EC5E94}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
