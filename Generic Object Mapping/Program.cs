@@ -7,9 +7,21 @@ namespace Generic_Object_Mapping
         {
             var entity = new EntityObject()
             {
+                str = "string test"
             };
 
             var foo = entity.Unit().ProjectTo<EntityDTO>();
+
+            var bar = Map<EntityDTO, EntityObject>(entity);
+        }
+
+        static TResponse Map<TResponse, TObject>(TObject entity)
+            where TObject : class
+            where TResponse : class
+        {
+            var obj = entity.Unit().ProjectTo<TResponse>();
+
+            return (TResponse)System.Convert.ChangeType(obj, typeof(TResponse));
         }
     }
 
@@ -20,7 +32,7 @@ namespace Generic_Object_Mapping
 
     public class EntityObject : IEntity
     {
-        public object obj { get; set; }
+        public string str { get; set; }
     }
 
 
@@ -30,6 +42,6 @@ namespace Generic_Object_Mapping
 
     public class EntityDTO : IEntityDto
     {
-        public object obj { get; set; }
+        public string str { get; set; }
     }
 }

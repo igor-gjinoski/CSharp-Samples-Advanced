@@ -3,7 +3,6 @@ namespace Disposable_Class
 {
     using System;
     using System.Runtime.InteropServices;
-
     using Microsoft.Win32.SafeHandles;
 
     class Program
