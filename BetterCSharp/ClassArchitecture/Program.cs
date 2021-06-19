@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using ClassArchitecture.Abstractions;
 using ClassArchitecture.Implementations;
@@ -9,12 +8,12 @@ namespace ClassArchitecture
     public class Processor<T>
     {
         private readonly IDataProvider<T> _dataProvider;
-        private readonly IManipulator<T, T> _manipulator;
+        private readonly IManipulator<T> _manipulator;
         private readonly IWriter<T> _writer;
 
         public Processor(
             IDataProvider<T> dataProvider,
-            IManipulator<T, T> manipulator,
+            IManipulator<T> manipulator,
             IWriter<T> writer)
         {
             _dataProvider = dataProvider;
@@ -41,8 +40,8 @@ namespace ClassArchitecture
             IDataProvider<int> provider = new RandomIntProvider(2, 10);
             IWriter<int> writer = new ConsoleWriter<int>();
 
-            IManipulator<int, int> collectionSumManipulator = new CollectionSum();
-            IManipulator<int, int> pythagoreanTheoremManipulator = new PythagoreanTheorem();
+            IManipulator<int> collectionSumManipulator = new CollectionSum();
+            IManipulator<int> pythagoreanTheoremManipulator = new PythagoreanTheorem();
 
             //var processor = new Processor<int>(provider, collectionSumManipulator, writer);
             var processor = new Processor<int>(provider, pythagoreanTheoremManipulator, writer);

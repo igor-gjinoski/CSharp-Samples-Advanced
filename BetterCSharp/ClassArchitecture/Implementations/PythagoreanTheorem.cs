@@ -11,7 +11,7 @@ namespace ClassArchitecture.Implementations
      * Fundamental relation in Euclidean geometry
      * 
     */
-    public class PythagoreanTheorem : IManipulator<int, int>
+    public class PythagoreanTheorem : IManipulator<int>
     {
         public int Manipulate(IEnumerable<int> data)
         {

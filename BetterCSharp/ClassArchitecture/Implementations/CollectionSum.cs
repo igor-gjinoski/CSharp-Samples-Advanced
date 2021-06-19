@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace ClassArchitecture.Implementations
 {
-    public class CollectionSum : IManipulator<int, int>
+    public class CollectionSum : IManipulator<int>
     {
         public int Manipulate(IEnumerable<int> data)
         {

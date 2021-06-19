@@ -2,8 +2,8 @@
 
 namespace ClassArchitecture.Abstractions
 {
-    public interface IManipulator<T, V>
+    public interface IManipulator<T>
     {
-        V Manipulate(IEnumerable<T> data);
+        T Manipulate(IEnumerable<T> data);
     }
 }
