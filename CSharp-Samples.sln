@@ -63,6 +63,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Generic Object Mapping", "G
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CSharp_typedeff", "CSharp_typedeff\CSharp_typedeff.csproj", "{DF9D319D-6FEE-4E24-BE16-3BB4CAD0615F}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01 Class Architecture", "01 Class Architecture", "{002DEACD-ECFC-4222-B421-3C9F6CF08384}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassArchitecture", "ClassArchitecture\ClassArchitecture.csproj", "{D751E4B4-6B14-4EC1-918F-B49DDD643BC6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -185,9 +189,17 @@ Global
 		{DF9D319D-6FEE-4E24-BE16-3BB4CAD0615F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DF9D319D-6FEE-4E24-BE16-3BB4CAD0615F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DF9D319D-6FEE-4E24-BE16-3BB4CAD0615F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D751E4B4-6B14-4EC1-918F-B49DDD643BC6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D751E4B4-6B14-4EC1-918F-B49DDD643BC6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D751E4B4-6B14-4EC1-918F-B49DDD643BC6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D751E4B4-6B14-4EC1-918F-B49DDD643BC6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{002DEACD-ECFC-4222-B421-3C9F6CF08384} = {46E893BB-D5F4-44AD-B8BA-7E16D89FEFEC}
+		{D751E4B4-6B14-4EC1-918F-B49DDD643BC6} = {002DEACD-ECFC-4222-B421-3C9F6CF08384}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {DEFFBA2A-0813-4F02-B697-FEFED76EDB94}
