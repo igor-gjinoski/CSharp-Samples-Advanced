@@ -48,6 +48,8 @@ namespace DependencyInjection
         {
             IServiceCollection services = new ServiceCollection();
             var serviceProvider = BuildServiceProvider(services);
+
+            var singleton = serviceProvider.GetService<ISingletonOperation>();
         }
     }
 }
