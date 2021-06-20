@@ -71,6 +71,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClassArchitecture", "Better
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DependencyInjection", "BetterCSharp\DependencyInjection\DependencyInjection.csproj", "{1A8B7E2A-7266-418B-BC86-950EC1623CB0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesignPatterns-Mediator", "DesignPatterns-Mediator\DesignPatterns-Mediator.csproj", "{91A0C7B5-1028-4A12-BCD7-49BA63809C1C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -201,6 +203,10 @@ Global
 		{1A8B7E2A-7266-418B-BC86-950EC1623CB0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1A8B7E2A-7266-418B-BC86-950EC1623CB0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1A8B7E2A-7266-418B-BC86-950EC1623CB0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{91A0C7B5-1028-4A12-BCD7-49BA63809C1C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{91A0C7B5-1028-4A12-BCD7-49BA63809C1C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{91A0C7B5-1028-4A12-BCD7-49BA63809C1C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{91A0C7B5-1028-4A12-BCD7-49BA63809C1C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
