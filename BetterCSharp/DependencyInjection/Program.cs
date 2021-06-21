@@ -47,9 +47,28 @@ namespace DependencyInjection
         static void Main()
         {
             IServiceCollection services = new ServiceCollection();
-            var serviceProvider = BuildServiceProvider(services);
+            IServiceProvider serviceProvider = BuildServiceProvider(services);
+            RequestGuids(serviceProvider);    
+            RequestGuids(serviceProvider);    
+        }
 
-            var singleton = serviceProvider.GetService<ISingletonOperation>();
+        static void RequestGuids(IServiceProvider serviceProvider)
+        {
+            var writer = new ConsoleWriter<string>();
+
+            using (var scope = serviceProvider.CreateScope())
+            {
+                var operationService = new OperationService(
+                    serviceProvider.GetService<IScopedOperation>(),
+                    serviceProvider.GetService<ISingletonOperation>(),
+                    serviceProvider.GetService<ITransientOperation>());
+
+                writer.Write($"Scoped: {operationService.GetScopedOperationId()}");
+                writer.Write($"Singleton: {operationService.GetSingletonOperationId()}");
+                writer.Write($"Transient: {operationService.GetTransientOperationId()}");
+
+                scope.Dispose();
+            }
         }
     }
 }

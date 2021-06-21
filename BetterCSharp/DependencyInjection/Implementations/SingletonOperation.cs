@@ -5,8 +5,16 @@ namespace DependencyInjection.Implementations
 {
     public class SingletonOperation : ISingletonOperation
     {
+        private readonly Guid _operationId;
+
+        public SingletonOperation()
+        {
+            _operationId = Guid.NewGuid();
+        }
+
         public Guid OperationId
-            =>
-            Guid.NewGuid();
+        {
+            get => _operationId;
+        }
     }
 }
