@@ -23,9 +23,14 @@ namespace MemoryCache.Example
             var key = "key";
             var token = new CancellationTokenSource().Token;
 
-            var cacheItem = await cache.GetOrCreateAsync(key, async () => await Task.FromResult("Some value"), token);
-            var hit = cacheItem.Hit;
-            var value = cacheItem.Value;
+            var cacheItem1 = await cache.GetOrCreateAsync(key, 
+                async () => await Task.FromResult("Some value"), token, System.DateTimeOffset.MaxValue);
+
+            var cacheItem2 = await cache.GetOrCreateAsync(key, 
+                async () => await Task.FromResult("Some value"), token, System.DateTimeOffset.MaxValue);
+
+            var hit = cacheItem2.Hit;
+            var value = cacheItem2.Value;
         }
     }
 }

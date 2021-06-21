@@ -39,11 +39,13 @@ namespace MemoryCache
         /// <param name="key">Cache key</param>
         /// <param name="getDataAsync">Set this data if value not exist.</param>
         /// <param name="refreshInterval">Lifetime of the cahed value</param>
-        public async Task<(bool Hit, T Value)> GetOrCreateAsync<T>(object key, Func<Task<T>> getDataAsync, CancellationToken cancellationToken)
+        public async Task<(bool Hit, T Value)> GetOrCreateAsync<T>(object key, Func<Task<T>> getDataAsync, 
+            CancellationToken cancellationToken, 
+            DateTimeOffset refreshInterval = default)
         {
             cancellationToken.ThrowIfCancellationRequested();
 
-            return await Task.FromResult(GetOrCreate<T>(key, getDataAsync));
+            return await Task.FromResult(GetOrCreate<T>(key, getDataAsync, refreshInterval));
         }
 
 
@@ -55,7 +57,7 @@ namespace MemoryCache
         /// <param name="key">Cache key</param>
         /// <param name="getDataAsync">Set this data if value not exist.</param>
         /// <param name="refreshInterval">Lifetime of the cahed value</param>
-        public (bool Hit, T Value) GetOrCreate<T>(object key, Func<Task<T>> getDataAsync)
+        public (bool Hit, T Value) GetOrCreate<T>(object key, Func<Task<T>> getDataAsync, DateTimeOffset refreshInterval = default)
         {
             bool cacheHit = _cache.TryGetValue(key, out T value);
             if (cacheHit)
@@ -75,7 +77,7 @@ namespace MemoryCache
                     value = getDataAsync
                         .Invoke()
                         .Result;
-                    _cache.Set(key, value);
+                    _cache.Set(key, value, refreshInterval);
                 }
             }
             finally
