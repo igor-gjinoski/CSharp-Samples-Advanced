@@ -32,33 +32,36 @@ namespace MemoryCache
 
 
         /// <summary>
-        /// Get value Async from cache
-        /// or create it Async if not exist.
+        /// Get value from cache
+        /// or create it if not exist.
         /// </summary>
-        /// <typeparam name="T"></typeparam>
         /// <param name="key">Cache key</param>
         /// <param name="getDataAsync">Set this data if value not exist.</param>
-        /// <param name="refreshInterval">Lifetime of the cahed value</param>
-        public async Task<(bool Hit, T Value)> GetOrCreateAsync<T>(object key, Func<Task<T>> getDataAsync, 
-            CancellationToken cancellationToken, 
-            DateTimeOffset refreshInterval = default)
+        public async Task<(bool Hit, T Value)> GetOrCreateAsync<T>(
+            object key,
+            Func<Task<T>> getDataAsync,
+            CancellationToken cancellationToken)
         {
-            cancellationToken.ThrowIfCancellationRequested();
-
-            return await Task.FromResult(GetOrCreate<T>(key, getDataAsync, refreshInterval));
+            return await GetOrCreateAsync(key, getDataAsync, cancellationToken, null);
         }
 
 
         /// <summary>
         /// Get value from cache
         /// or create it if not exist.
+        /// Set cache options applied to an entry of IMemoryCache
         /// </summary>
-        /// <typeparam name="T"></typeparam>
         /// <param name="key">Cache key</param>
         /// <param name="getDataAsync">Set this data if value not exist.</param>
-        /// <param name="refreshInterval">Lifetime of the cahed value</param>
-        public (bool Hit, T Value) GetOrCreate<T>(object key, Func<Task<T>> getDataAsync, DateTimeOffset refreshInterval = default)
+        /// <param name="cacheEntryOptions">Lifetime of the cached value</param>
+        public async Task<(bool Hit, T Value)> GetOrCreateAsync<T>(
+            object key, 
+            Func<Task<T>> getDataAsync, 
+            CancellationToken cancellationToken,
+            MemoryCacheEntryOptions cacheEntryOptions)
         {
+            cancellationToken.ThrowIfCancellationRequested();
+
             bool cacheHit = _cache.TryGetValue(key, out T value);
             if (cacheHit)
             {
@@ -74,10 +77,9 @@ namespace MemoryCache
             {
                 if (!_cache.TryGetValue(key, out value))
                 {
-                    value = getDataAsync
-                        .Invoke()
-                        .Result;
-                    _cache.Set(key, value, refreshInterval);
+                    value = await getDataAsync.Invoke();
+
+                    _cache.Set(key, value, cacheEntryOptions ?? default);
                 }
             }
             finally

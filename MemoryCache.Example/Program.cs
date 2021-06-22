@@ -23,11 +23,16 @@ namespace MemoryCache.Example
             var key = "key";
             var token = new CancellationTokenSource().Token;
 
-            var cacheItem1 = await cache.GetOrCreateAsync(key, 
-                async () => await Task.FromResult("Some value"), token, System.DateTimeOffset.MaxValue);
+            var cacheItem1 = await cache.GetOrCreateAsync(key,
+                async () => await Task.FromResult("Some value"), token,
+                new Microsoft.Extensions.Caching.Memory.MemoryCacheEntryOptions()
+                {
+                    SlidingExpiration = System.TimeSpan.FromSeconds(10),
+                    AbsoluteExpirationRelativeToNow = System.TimeSpan.FromSeconds(10)
+                });
 
-            var cacheItem2 = await cache.GetOrCreateAsync(key, 
-                async () => await Task.FromResult("Some value"), token, System.DateTimeOffset.MaxValue);
+            var cacheItem2 = await cache.GetOrCreateAsync(key,
+                async () => await Task.FromResult("Some value"), token);
 
             var hit = cacheItem2.Hit;
             var value = cacheItem2.Value;
