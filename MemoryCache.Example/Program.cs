@@ -27,9 +27,9 @@ namespace MemoryCache.Example
              * Better!
              * Use LazyCache
              */
-
             await TryLazyCache();
         }
+
 
         static async Task TryInMemoryCache(IMemoryCacheProvider cache)
         {
@@ -51,6 +51,10 @@ namespace MemoryCache.Example
             var value = cacheItem2.Value;
         }
 
+
+        /// <summary>
+        /// Cache implementation with LazyCache
+        /// </summary>
         static async Task TryLazyCache()
         {
             var serviceProvider = new ServiceCollection()
