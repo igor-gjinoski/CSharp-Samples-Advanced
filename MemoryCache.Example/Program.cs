@@ -1,12 +1,18 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using MemoryCache.LazyCache;
+using Microsoft.Extensions.DependencyInjection;
 using System.Threading;
 using System.Threading.Tasks;
 
 namespace MemoryCache.Example
 {
+    /// <summary>
+    /// InMemoryCache is just for Demo
+    /// Instead use LazyCache implementation.
+    /// MS MemoryCache causes problems when Expiration is less than 20 seconds.
+    /// </summary>
     class Program
     {
-        static async Task Main(string[] args)
+        static async Task Main()
         {
             var serviceProvider = new ServiceCollection()
                 .AddMemoryCache()
@@ -15,10 +21,17 @@ namespace MemoryCache.Example
 
             var cache = serviceProvider.GetService<IMemoryCacheProvider>();
 
-            await TryCache(cache);
+            await TryInMemoryCache(cache);
+
+            /*
+             * Better!
+             * Use LazyCache
+             */
+
+            await TryLazyCache();
         }
 
-        static async Task TryCache(IMemoryCacheProvider cache)
+        static async Task TryInMemoryCache(IMemoryCacheProvider cache)
         {
             var key = "key";
             var token = new CancellationTokenSource().Token;
@@ -36,6 +49,29 @@ namespace MemoryCache.Example
 
             var hit = cacheItem2.Hit;
             var value = cacheItem2.Value;
+        }
+
+        static async Task TryLazyCache()
+        {
+            var serviceProvider = new ServiceCollection()
+                .AddLazyCacheProvider()
+                .BuildServiceProvider();
+
+            var lazyCache = serviceProvider.GetService<ILazyCacheProvider>();
+
+            var key = "test";
+            var value = "some text";
+            var token = new CancellationTokenSource().Token;
+
+            await lazyCache.GetOrAddAsync(
+                value,
+                cacheOptions =>
+                {
+                    cacheOptions.SetSlidingExpiration(new System.TimeSpan(10))
+                                .SetAbsoluteExpirationRelativeToNow(new System.TimeSpan(25))
+                                .WithKeySelector(key);
+                },
+                token);
         }
     }
 }
