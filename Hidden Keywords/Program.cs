@@ -1,17 +1,16 @@
-﻿
-namespace Hidden_Keywords
+﻿namespace Hidden_Keywords
 {
     using System;
     using System.Text;
 
-    class Program
+    unsafe class Program
     {
         /// <summary>
         /// __reftype - Used to get Type object from a TypedReference.
         /// __refvalue - It is used to fetch the value from a reference object. You can use this to get the actual object from TypedReference object.
         /// __makeref - Gives the TypedReference object from the object itself. This is just the reverse to __refvalue.
         /// </summary>
-        static void Main(string[] args)
+        static unsafe void Main(string[] args)
         {
             int x = 3;
             var xRef = __makeref(x);
@@ -22,7 +21,12 @@ namespace Hidden_Keywords
             Console.WriteLine(__refvalue(xRef, int)); // Prints "10"
 
             __arglistDemoMethod(__arglist(1, 2, x, "Str"));
+
+            Fixed();
+            Checked();
+            StackAlloc();
         }
+
 
         /// <summary>
         /// Generally we used to send parameters to a method 
@@ -51,6 +55,44 @@ namespace Hidden_Keywords
                 arglistBuilder.AppendLine($"Arg Type: {item.GetType()} --- Arg value: {item} --- Items remaining: {iterator.GetRemainingCount()}");
             }
             Console.WriteLine(arglistBuilder.ToString());
+        }
+
+
+        /// <summary>
+        /// Fixed statement sets the pointer to be in a fixed memory address so that, 
+        /// it will not be moved to anywhere even if Garbage Collection Thread is invoked.
+        /// </summary>
+        public unsafe static void Fixed()
+        {
+            int[] a = new int[] { 1, 2, 3 };
+            fixed (int* pt = a)
+            {
+                int* c = pt;
+                Console.WriteLine("Value : " + *c);
+            }
+        }
+
+
+        /// <summary>
+        /// Used to control arithmetic overflow context. 
+        /// Checked keyword throws OverflowException when an arithmetic operation overflows the necessary size.
+        /// </summary>
+        public static void Checked()
+        {
+            int x = int.MaxValue;
+            int y = int.MaxValue;
+            int z = checked(x + y);
+        }
+
+
+        /// <summary>
+        ///  Allocates memory dynamically from stack. 
+        ///  stackalloc is used to acquire memory quickly when it is very essential. 
+        ///  We can use the advantage of Fast accessible memory when we use it from Stack.
+        /// </summary>
+        public static void StackAlloc()
+        {
+            Span<int> numbers = stackalloc int[1000];
         }
     }
 }
