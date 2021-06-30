@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace DesignPatterns_Repository.Repository
 {
-    public interface IRepository<TEntity> 
+    public interface IRepository<TEntity>
         where TEntity : class
     {
         TEntity GetByID(object id);

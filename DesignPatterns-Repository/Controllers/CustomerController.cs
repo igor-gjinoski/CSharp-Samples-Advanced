@@ -1,6 +1,7 @@
 ﻿using System.Data;
 using System.Linq;
 using DesignPatterns_Repository.Data;
+using DesignPatterns_Repository.Repository.CustomerRepository;
 using DesignPatterns_Repository.UnitOfWork;
 using Microsoft.AspNetCore.Mvc;
 
@@ -10,15 +11,22 @@ namespace DesignPatterns_Repository.Controllers
     [ApiController]
     public class CustomerController : Controller
     {
-        private readonly IUnitOfWork _unitOfWork;
+        private readonly ICustomerRepository _repository;
+        private readonly IUnitOfWork<ApplicationDbContext> _unitOfWork;
 
-        public CustomerController(IUnitOfWork unitOfWork)
-            => _unitOfWork = unitOfWork;
+        public CustomerController(
+            ICustomerRepository repository,
+            IUnitOfWork<ApplicationDbContext> unitOfWork)
+        {
+            _repository = repository;
+            _unitOfWork = unitOfWork;
+        }
+
 
         [Route("Index")]
         public IActionResult Index()
         {
-            return Ok(_unitOfWork.CustomerRepository.Get().ToList());
+            return Ok(_repository.Get().ToList());
         }
 
 
@@ -28,13 +36,32 @@ namespace DesignPatterns_Repository.Controllers
         {
             try
             {
-                _unitOfWork.CustomerRepository.Insert(Customer);
-                _unitOfWork.Commit();
+                _repository.Insert(Customer);
+                _unitOfWork.Complete();
+
                 return Ok("Customer Created!");
             }
             catch (DataException)
             {
                 return BadRequest("Unable to Create Customer object.");
+            }
+        }
+
+
+        [HttpDelete]
+        [Route("Delete")]
+        public ActionResult Delete(int id)
+        {
+            try
+            {
+                _repository.Delete(id);
+                _unitOfWork.Complete();
+
+                return Ok();
+            }
+            catch (DataException)
+            {
+                return BadRequest($"Unable to Delete Customer with id: {id}.");
             }
         }
 
@@ -45,7 +72,7 @@ namespace DesignPatterns_Repository.Controllers
         {
             try
             {
-                return Ok(_unitOfWork.CustomerRepository.GetByID(Id));
+                return Ok(_repository.GetByID(Id));
             }
             catch (DataException)
             {
@@ -60,38 +87,12 @@ namespace DesignPatterns_Repository.Controllers
         {
             try
             {
-                return Ok(_unitOfWork.CustomerRepository.FindByName(name));
+                return Ok(_repository.FindByName(name));
             }
             catch (DataException)
             {
                 return BadRequest($"Unable to Find Customers with name: {name}.");
             }
-        }
-
-
-        [HttpDelete]
-        [Route("Delete")]
-        public ActionResult Delete(int id)
-        {
-            try
-            {
-                _unitOfWork.CustomerRepository.Delete(id);
-                return Ok();
-            }
-            catch (DataException)
-            {
-                return BadRequest($"Unable to Delete Customer with id: {id}.");
-            }
-        }
-
-
-        [HttpPost]
-        [Route("DeleteConfirmed")]
-        public ActionResult DeleteConfirmed(int id)
-        {
-            _unitOfWork.CustomerRepository.Delete(id);
-            _unitOfWork.Commit();
-            return RedirectToAction("Index");
         }
     }
 }

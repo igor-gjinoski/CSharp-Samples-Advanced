@@ -1,12 +1,10 @@
 ﻿using System;
-using DesignPatterns_Repository.Repository.CustomerRepository;
+using DesignPatterns_Repository.UnitType;
 
 namespace DesignPatterns_Repository.UnitOfWork
 {
-    public interface IUnitOfWork : IDisposable
+    public interface IUnitOfWork<TContext> : IDisposable
     {
-        ICustomerRepository CustomerRepository { get; }
-
-        void Commit();
+        Unit Complete();
     }
 }

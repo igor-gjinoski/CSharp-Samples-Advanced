@@ -5,7 +5,9 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using DesignPatterns_Repository.Data;
-using DesignPatterns_Repository.UnitOfWork;
+using DesignPatterns_Repository.Implementation.UnitOfWork.CustomerUnitOfWork;
+using DesignPatterns_Repository.Implementation.SeviceCollectionExtensions;
+using DesignPatterns_Repository.Repository.CustomerRepository;
 
 namespace DesignPatterns_Repository
 {
@@ -24,7 +26,12 @@ namespace DesignPatterns_Repository
                 config.UseSqlServer(
                     Configuration.GetConnectionString("DefaultConnection")));
 
-            services.AddScoped<IUnitOfWork, UnitOfWork.UnitOfWork>();
+            services
+                .AddUnitOfWork<CustomerUnitOfWork, ApplicationDbContext>();
+
+            services
+                .AddScoped<ICustomerRepository, CustomerRepository>();
+
             services.AddControllersWithViews();
         }
 

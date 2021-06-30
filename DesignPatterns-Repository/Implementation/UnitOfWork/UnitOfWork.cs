@@ -1,36 +1,37 @@
-﻿using DesignPatterns_Repository.Data;
-using DesignPatterns_Repository.Repository.CustomerRepository;
+﻿using System;
+using DesignPatterns_Repository.UnitOfWork;
+using DesignPatterns_Repository.UnitType;
+using Microsoft.EntityFrameworkCore;
 
-namespace DesignPatterns_Repository.UnitOfWork
+namespace DesignPatterns_Repository.Implementation.UnitOfWork
 {
-    public class UnitOfWork : IUnitOfWork
+    public abstract class UnitOfWork<TContext> :
+        IUnitOfWork<TContext>,
+        IDisposable
+        where TContext : DbContext
     {
-        private ICustomerRepository _customers;
+        protected TContext _contextAccessor;
 
-        private readonly ApplicationDbContext _applicationContext;
-
-        public UnitOfWork(ApplicationDbContext applicationContext)
+        protected UnitOfWork(TContext context)
         {
-            _applicationContext = applicationContext;
+            _contextAccessor = context;
         }
 
-        public ICustomerRepository CustomerRepository
+        public virtual Unit Complete()
         {
-            get
-            {
-                return _customers ??
-                    (_customers = new CustomerRepository(_applicationContext));
-            }
-        }
+            _contextAccessor.SaveChanges();
 
-        public void Commit()
-        {
-            _applicationContext.SaveChanges();
+            return Unit.Value;
         }
 
         public void Dispose()
         {
-            _applicationContext.Dispose();
+            Dispose(true);
+            GC.SuppressFinalize(this);
+        }
+
+        protected virtual void Dispose(bool disposing)
+        {
         }
     }
 }
