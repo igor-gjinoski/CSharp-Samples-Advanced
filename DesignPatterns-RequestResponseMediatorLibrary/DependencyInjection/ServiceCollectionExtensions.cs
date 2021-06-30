@@ -26,7 +26,7 @@ namespace DesignPatterns_RequestResponseMediatorLibrary.DependencyInjection
                     // GetInterface search for IHandler with two generic arguments
                     handlerInfo[type] =
                         handlers.SingleOrDefault(x => type == x.GetInterface("IHandler`2")!
-                                                            .GetGenericArguments()[0]);
+                                                               .GetGenericArguments()[0]);
                 });
 
                 var serviceDescriptor = handlers.Select(x => new ServiceDescriptor(x, x, lifetime));
@@ -40,7 +40,7 @@ namespace DesignPatterns_RequestResponseMediatorLibrary.DependencyInjection
         }
 
 
-        private static IList<Type> GetClassesImplementingInterface(Assembly assembly, Type interfaceType)
+        private static IEnumerable<Type> GetClassesImplementingInterface(Assembly assembly, Type interfaceType)
         {
             return assembly.ExportedTypes
                     .Where(type =>
@@ -48,14 +48,14 @@ namespace DesignPatterns_RequestResponseMediatorLibrary.DependencyInjection
                         var implementRequestType = type
                             .GetInterfaces()
                             .Any(@interface => @interface.IsGenericType &&
-                                                 @interface.GetGenericTypeDefinition() == interfaceType);
+                                               @interface.GetGenericTypeDefinition() == interfaceType);
 
                         return !type.IsInterface && !type.IsAbstract && implementRequestType;
-                    }).ToList();
+                    });
         }
 
 
-        public static void ForEach<T>(this IList<T> list, Action<T> action)
+        public static void ForEach<T>(this IEnumerable<T> list, Action<T> action)
         {
             foreach (var element in list)
                 action(element);
