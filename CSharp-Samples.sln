@@ -81,7 +81,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MemoryCache", "MemoryCache\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MemoryCache.Example", "MemoryCache.Example\MemoryCache.Example.csproj", "{525F7ED9-FECA-4349-9825-93FAFCDA331E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CompileTimePerformanceWithReflection", "CompileTimePerformanceWithReflection\CompileTimePerformanceWithReflection.csproj", "{230EAE03-D5ED-49D6-B3C8-5409B9967045}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CompileTimePerformanceWithReflection", "CompileTimePerformanceWithReflection\CompileTimePerformanceWithReflection.csproj", "{230EAE03-D5ED-49D6-B3C8-5409B9967045}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Expressions", "Expressions\Expressions.csproj", "{A2053790-D9BD-4CAE-9491-B6136FA92600}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -237,6 +239,10 @@ Global
 		{230EAE03-D5ED-49D6-B3C8-5409B9967045}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{230EAE03-D5ED-49D6-B3C8-5409B9967045}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{230EAE03-D5ED-49D6-B3C8-5409B9967045}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A2053790-D9BD-4CAE-9491-B6136FA92600}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A2053790-D9BD-4CAE-9491-B6136FA92600}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A2053790-D9BD-4CAE-9491-B6136FA92600}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A2053790-D9BD-4CAE-9491-B6136FA92600}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
