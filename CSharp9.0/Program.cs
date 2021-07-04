@@ -1,5 +1,5 @@
 ﻿
-namespace CSharp9._0___Init_only_setters
+namespace CSharp9
 {
     using System;
 
@@ -15,6 +15,24 @@ namespace CSharp9._0___Init_only_setters
                     PressureInMillibars = 998.0m
                 }
                 .ToString());
+
+
+            /*
+             * If you need to mutate immutable properties of a record instance, 
+             * you can use a with expression to achieve nondestructive mutation. 
+             * A with expression makes a new record instance that is a copy of an existing record instance, 
+             * with specified properties and fields modified.
+             */
+            var person = new Person 
+            { 
+                FirstName = "A", 
+                LastName = "K" 
+            };
+            var otherPerson = person 
+                with 
+                { 
+                    LastName = "Other" 
+                };
         }
     }
 
@@ -32,5 +50,18 @@ namespace CSharp9._0___Init_only_setters
         public override string ToString() =>
             $"At {RecordedAt:h:mm tt} on {RecordedAt:M/d/yyyy}: " +
             $"Temp = {TemperatureInCelsius}, with {PressureInMillibars} pressure";
+    }
+
+
+    /// <summary>
+    /// record 
+    /// Define a reference type that provides built-in functionality for encapsulating data.
+    /// Primarily intended for supporting immutable data models.
+    /// </summary>
+    public record Person
+    {
+        #nullable enable
+        public string? FirstName { get; init; }
+        public string? LastName { get; init; }
     }
 }
