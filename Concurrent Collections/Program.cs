@@ -1,11 +1,10 @@
-﻿
+﻿using System;
+using System.Threading.Tasks;
+using System.Collections.Generic;
+using System.Collections.Concurrent;
+
 namespace Concurrent_Collections
 {
-    using System;
-    using System.Threading.Tasks;
-    using System.Collections.Generic;
-    using System.Collections.Concurrent;
-
     public class A
     {
         public string Name { get; set; }
