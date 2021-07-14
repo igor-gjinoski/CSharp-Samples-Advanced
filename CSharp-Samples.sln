@@ -79,11 +79,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CSharp9.0", "CSharp9.0\CSha
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SignalR", "SignalR", "{9BD2C976-4345-43AF-B1C0-8B1CADC0BA9B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SignalRClient", "SignalRClient\SignalRClient.csproj", "{BB90623F-C23A-4380-8E58-F99000E3EC03}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SignalRClient", "SignalRClient\SignalRClient.csproj", "{BB90623F-C23A-4380-8E58-F99000E3EC03}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SignalRCommon", "SignalRCommon\SignalRCommon.csproj", "{21BEFC1D-5974-480E-BC38-E0A15D3D8DC6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SignalRCommon", "SignalRCommon\SignalRCommon.csproj", "{21BEFC1D-5974-480E-BC38-E0A15D3D8DC6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SignalRServer", "SignalRServer\SignalRServer.csproj", "{C2280377-5196-4D72-BE56-05AE4E8E19CF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SignalRServer", "SignalRServer\SignalRServer.csproj", "{C2280377-5196-4D72-BE56-05AE4E8E19CF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Span", "Span\Span.csproj", "{3F269D4D-A1E4-4B03-A4AC-5A665D10CA1E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -239,6 +241,10 @@ Global
 		{C2280377-5196-4D72-BE56-05AE4E8E19CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C2280377-5196-4D72-BE56-05AE4E8E19CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C2280377-5196-4D72-BE56-05AE4E8E19CF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3F269D4D-A1E4-4B03-A4AC-5A665D10CA1E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3F269D4D-A1E4-4B03-A4AC-5A665D10CA1E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3F269D4D-A1E4-4B03-A4AC-5A665D10CA1E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3F269D4D-A1E4-4B03-A4AC-5A665D10CA1E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
