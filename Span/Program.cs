@@ -12,7 +12,11 @@ namespace Span
         }
     }
 
-    
+    /// <summary>
+    /// Span<T> is a ref struct that is allocated on the stack rather than on the managed heap. 
+    /// Ref struct types have a number of restrictions to ensure that they cannot be promoted to the managed heap, 
+    /// including that they can't be boxed and they can't be used across await and yield boundaries.
+    /// </summary>
     [MemoryDiagnoser]
     public class Benchmarks
     {
