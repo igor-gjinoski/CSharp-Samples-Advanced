@@ -3,18 +3,18 @@ using Newtonsoft.Json;
 
 namespace Serialization
 {
-    public class JsonSerializer<T> : ISerializer<T>
+    public class JsonSerializer<TObject> : ISerializer<TObject>
     {
-        public void Serialize(T obj, Stream stream)
+        public void Serialize(TObject obj, Stream stream)
         {
             var writer = new StreamWriter(stream);
             writer.Write(JsonConvert.SerializeObject(obj, Formatting.Indented));
             writer.Flush();
         }
 
-        public T Deserialize(Stream stream)
+        public TObject Deserialize(Stream stream)
         {
-            return JsonConvert.DeserializeObject<T>(new StreamReader(stream).ReadToEnd());
+            return JsonConvert.DeserializeObject<TObject>(new StreamReader(stream).ReadToEnd());
         }
     }
 }

@@ -2,10 +2,10 @@
 
 namespace Serialization
 {
-    public interface ISerializer<T>
+    public interface ISerializer<TObject>
     {
-        void Serialize(T obj, Stream stream);
+        void Serialize(TObject obj, Stream stream);
 
-        T Deserialize(Stream stream);
+        TObject Deserialize(Stream stream);
     }
 }
