@@ -1,17 +1,20 @@
-﻿
-namespace DesignPatterns.Structural.Decorator
+﻿using System.Threading;
+using System.Threading.Tasks;
+
+namespace DesignPatterns.Decorator
 {
-    using System.Threading.Tasks;
-
-    public abstract class LogSaverDecorator : ILogSaver
+    public class LogSaverDecorator : ILogSaver
     {
-        protected readonly ILogSaver _logSaverDecorator;
+        private readonly ILogSaver _logSaver;
 
-        public LogSaverDecorator(ILogSaver logSaverDecorato)
+        public LogSaverDecorator(ILogSaver logSaver)
             =>
-            _logSaverDecorator = logSaverDecorato;
+            _logSaver = logSaver;
 
 
-        public abstract Task SaveLogEntry(string Id, string log);
+        public async Task SaveLogEntry(string id, string log, CancellationToken cancellationToken)
+        {
+            await _logSaver.SaveLogEntry(id, log, cancellationToken);
+        }
     }
 }
