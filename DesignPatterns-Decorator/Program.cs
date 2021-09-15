@@ -15,7 +15,6 @@ namespace DesignPatterns
 
             ILogSaver logSaver = serviceProvider.GetService<ILogSaver>();
             logSaver.SaveLogEntry("x1", "SOME_LOG", CancellationToken.None);
-
         }
 
         public static System.IServiceProvider BuildServiceProvider(IServiceCollection services)
@@ -24,7 +23,6 @@ namespace DesignPatterns
                 .TryAddTransient(typeof(IServiceDecoratorConfigurator<>), typeof(DefaultDecoratorBuilder<>));
             
             services
-                .AddSingleton<IDisposeRegister, DisposeRegister>()
                 .AddScopedDecoratedService<ILogSaver>(
                     configurator =>
                     {
