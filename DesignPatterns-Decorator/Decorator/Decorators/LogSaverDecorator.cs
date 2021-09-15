@@ -14,6 +14,7 @@ namespace DesignPatterns.Decorator
 
         public async Task SaveLogEntry(string id, string log, CancellationToken cancellationToken)
         {
+            System.Console.WriteLine($"LogSaverDecorator: {id}");
             await _logSaver.SaveLogEntry(id, log, cancellationToken);
         }
     }

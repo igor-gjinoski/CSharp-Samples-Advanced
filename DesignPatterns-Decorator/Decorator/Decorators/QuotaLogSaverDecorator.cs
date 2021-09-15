@@ -17,6 +17,7 @@ namespace DesignPatterns.Decorator
             if (!QuotaReached(id))
             {
                 IncrementUserQuota();
+                System.Console.WriteLine($"QuotaLogSaverDecorator : {id}");
                 await _logSaver.SaveLogEntry(id, log, cancellationToken);
                 return;
             }

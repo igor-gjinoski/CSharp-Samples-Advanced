@@ -11,10 +11,8 @@ namespace DesignPatterns.Configurator
             where TServiceInterface : class
         {
             return services
-                .AddScoped(serviceProvider =>
-                    BuildDecoratedService(serviceProvider, configCallback));
+                .AddScoped(serviceProvider => BuildDecoratedService(serviceProvider, configCallback));
         }
-
 
         private static TServiceInterface BuildDecoratedService<TServiceInterface>(
             IServiceProvider serviceProvider,
@@ -22,8 +20,10 @@ namespace DesignPatterns.Configurator
         {
             var configurator = serviceProvider.GetService<IServiceDecoratorConfigurator<TServiceInterface>>();
 
-            if (!(configurator is IServiceDecoratorBuilder<TServiceInterface> builder))
+            if (configurator is not IServiceDecoratorBuilder<TServiceInterface> builder)
             {
+                throw new InvalidCastException(
+                    $"Unable to cast configurator to {typeof(IServiceDecoratorBuilder<TServiceInterface>)}!");
             }
 
             configCallback(configurator);
