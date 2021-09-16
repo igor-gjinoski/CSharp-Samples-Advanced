@@ -1,5 +1,6 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 
 namespace DesignPatterns.Configurator
@@ -21,17 +22,14 @@ namespace DesignPatterns.Configurator
             return this;
         }
 
-
         public void AddService<TService>()
             where TService : TServiceInterface
         {
             _serviceType = typeof(TService);
         }
 
-
         public TServiceInterface Build(IServiceProvider provider)
         {
-            
             // Validate _serviceType is not null
             if (_serviceType == null)
             {
@@ -39,21 +37,23 @@ namespace DesignPatterns.Configurator
             }
 
             var serviceInstance = CreateInstance(provider, _serviceType);
-
             if (_decorators != null)
             {
-                for (var i = _decorators.Count - 1; i >= 0; i--)
+                for (var index = _decorators.Count - 1; index >= 0; index--)
                 {
                     serviceInstance =
-                        (TServiceInterface)CreateInstance(provider, _decorators[i], serviceInstance);
+                        (TServiceInterface)CreateInstance(provider, _decorators[index], serviceInstance);
                 }
             }
 
             return (TServiceInterface)serviceInstance;
-            
         }
 
 
+        /// <summary>
+        /// Create an instance of a runtime type and have the DI container inject the dependencies.
+        /// </summary>
+        /// <returns></returns>
         private object CreateInstance(IServiceProvider provider, Type type, params object[] parameters)
         {
             return ActivatorUtilities.CreateInstance(provider, type, parameters);
