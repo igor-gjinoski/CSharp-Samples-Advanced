@@ -1,8 +1,8 @@
-﻿using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.DependencyInjection.Extensions;
+﻿using System.Threading;
+using Microsoft.Extensions.DependencyInjection;
 using DesignPatterns.Configurator;
 using DesignPatterns.Decorator;
-using System.Threading;
+using DesignPatterns.DisposableRegister;
 
 namespace DesignPatterns
 {
@@ -20,7 +20,8 @@ namespace DesignPatterns
         public static System.IServiceProvider BuildServiceProvider(IServiceCollection services)
         {
             services
-                .TryAddTransient(typeof(IServiceDecoratorConfigurator<>), typeof(DefaultDecoratorBuilder<>));
+                .AddSingleton(typeof(IDisposeRegister), typeof(DisposeRegister))
+                .AddScoped(typeof(IServiceDecoratorConfigurator<>), typeof(DefaultDecoratorBuilder<>));
             
             services
                 .AddScopedDecoratedService<ILogSaver>(

@@ -1,7 +1,10 @@
-﻿using Microsoft.Extensions.DependencyInjection;
-using System;
+﻿using System;
+using System.Linq;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
+using System.Threading;
+using Microsoft.Extensions.DependencyInjection;
+using DesignPatterns.DisposableRegister;
 
 namespace DesignPatterns.Configurator
 {
@@ -11,6 +14,11 @@ namespace DesignPatterns.Configurator
     {
         private Type _serviceType;
         private IList<Type> _decorators;
+
+        private static readonly ConcurrentDictionary<Type, SemaphoreSlim> _lockService =
+            new ConcurrentDictionary<Type, SemaphoreSlim>();
+
+        private static readonly object BuildLock = new object();
 
         public IServiceDecoratorConfigurator<TServiceInterface> AddDecorator<TDecorator>()
             where TDecorator : TServiceInterface
@@ -30,28 +38,59 @@ namespace DesignPatterns.Configurator
 
         public TServiceInterface Build(IServiceProvider provider)
         {
-            // Validate _serviceType is not null
-            if (_serviceType == null)
+            if (!_lockService.TryGetValue(_serviceType, out var @lock))
             {
-                // throw exception
-            }
-
-            var serviceInstance = CreateInstance(provider, _serviceType);
-            if (_decorators != null)
-            {
-                for (var index = _decorators.Count - 1; index >= 0; index--)
+                lock (BuildLock)
                 {
-                    serviceInstance =
-                        (TServiceInterface)CreateInstance(provider, _decorators[index], serviceInstance);
+                    if (!_lockService.TryGetValue(_serviceType, out @lock))
+                    {
+                        @lock = new SemaphoreSlim(1, 1);
+                        _lockService.TryAdd(_serviceType, @lock);
+                    }
                 }
             }
 
-            // Create an instance of a runtime type and have the DI container inject the dependencies.
-            object CreateInstance(IServiceProvider provider, Type type, params object[] parameters)
-                =>
-                ActivatorUtilities.CreateInstance(provider, type, parameters);
+            try
+            {
+                var disposeRegister = provider.GetService<IDisposeRegister>();
 
-            return (TServiceInterface)serviceInstance;
+                @lock.Wait();
+
+                if (_serviceType is null) // throw exception
+                {
+                }
+
+                var serviceInstance = CreateInstance(provider, _serviceType);
+                if (serviceInstance is IDisposable disposableService && _decorators.Any())
+                {
+                    disposeRegister.Register(disposableService);
+                }
+
+                if (_decorators is not null)
+                {
+                    for (var index = _decorators.Count - 1; index >= 0; index--)
+                    {
+                        serviceInstance =
+                            (TServiceInterface)CreateInstance(provider, _decorators[index], serviceInstance);
+
+                        if (serviceInstance is IDisposable disposableDecorator && index != 0)
+                        {
+                            disposeRegister.Register(disposableDecorator);
+                        }
+                    }
+                }
+
+                object CreateInstance(IServiceProvider provider, Type type, params object[] parameters)
+                    =>
+                    ActivatorUtilities.CreateInstance(provider, type, parameters);
+                
+
+                return (TServiceInterface)serviceInstance;
+            }
+            finally
+            {
+                @lock.Release();
+            }
         }
     }
 }
