@@ -46,17 +46,12 @@ namespace DesignPatterns.Configurator
                 }
             }
 
+            // Create an instance of a runtime type and have the DI container inject the dependencies.
+            object CreateInstance(IServiceProvider provider, Type type, params object[] parameters)
+                =>
+                ActivatorUtilities.CreateInstance(provider, type, parameters);
+
             return (TServiceInterface)serviceInstance;
-        }
-
-
-        /// <summary>
-        /// Create an instance of a runtime type and have the DI container inject the dependencies.
-        /// </summary>
-        /// <returns></returns>
-        private object CreateInstance(IServiceProvider provider, Type type, params object[] parameters)
-        {
-            return ActivatorUtilities.CreateInstance(provider, type, parameters);
         }
     }
 }
