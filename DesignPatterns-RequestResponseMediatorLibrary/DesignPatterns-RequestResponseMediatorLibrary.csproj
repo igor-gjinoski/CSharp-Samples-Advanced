@@ -13,8 +13,4 @@
     <ProjectReference Include="..\DesignPatterns-RequestResponseMediatorLibrary.Abstractions\DesignPatterns-RequestResponseMediatorLibrary.Abstractions.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="DependencyInjection\Registration\" />
-  </ItemGroup>
-
 </Project>

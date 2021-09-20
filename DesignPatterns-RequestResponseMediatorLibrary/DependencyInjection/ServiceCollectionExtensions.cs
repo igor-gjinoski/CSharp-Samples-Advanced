@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using Microsoft.Extensions.DependencyInjection;
-using PlatformService.Mediator.DependencyInjection.Registration;
+using DesignPatterns_RequestResponseMediatorLibrary.DependencyInjection.Registration;
 
 namespace DesignPatterns_RequestResponseMediatorLibrary.DependencyInjection
 {
