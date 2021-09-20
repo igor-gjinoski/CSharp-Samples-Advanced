@@ -87,6 +87,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SignalRServer", "SignalRSer
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Span", "Span\Span.csproj", "{3F269D4D-A1E4-4B03-A4AC-5A665D10CA1E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesignPatterns-RequestResponseMediatorLibrary.Abstractions", "DesignPatterns-RequestResponseMediatorLibrary.Abstractions\DesignPatterns-RequestResponseMediatorLibrary.Abstractions.csproj", "{98A59F88-82AD-4ADB-9C4A-EF5282CA9936}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -245,6 +247,10 @@ Global
 		{3F269D4D-A1E4-4B03-A4AC-5A665D10CA1E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3F269D4D-A1E4-4B03-A4AC-5A665D10CA1E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3F269D4D-A1E4-4B03-A4AC-5A665D10CA1E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{98A59F88-82AD-4ADB-9C4A-EF5282CA9936}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{98A59F88-82AD-4ADB-9C4A-EF5282CA9936}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{98A59F88-82AD-4ADB-9C4A-EF5282CA9936}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{98A59F88-82AD-4ADB-9C4A-EF5282CA9936}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
