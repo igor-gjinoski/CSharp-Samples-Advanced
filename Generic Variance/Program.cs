@@ -10,7 +10,6 @@ namespace Generic_Variance
         {
             ContravariantGeneric();
             CovariantGeneric();
-            AnotherExample();
         }
 
         public static void ContravariantGeneric()
