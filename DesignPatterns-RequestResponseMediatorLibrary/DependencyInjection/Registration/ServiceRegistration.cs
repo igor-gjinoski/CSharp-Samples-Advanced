@@ -34,16 +34,19 @@ namespace DesignPatterns_RequestResponseMediatorLibrary.DependencyInjection.Regi
 
             typesRequests.ForEach(type =>
             {
-                // IHandler`2
-                // GetInterface search for IHandler with two generic arguments
                 handlerInfo[type] =
-                    typesHandlers.SingleOrDefault(x => type == x.GetInterface("IHandler`2")!
-                                                           .GetGenericArguments()[0]);
+                    typesHandlers.SingleOrDefault(handler =>
+                    {
+                        Type handlerRequestArgument = handler.GetInterface("IHandler`2")!.GetGenericArguments()[0];
+
+                        return (type == handlerRequestArgument || 
+                                type.IsSubclassOf(handlerRequestArgument));
+                    });
             });
 
             var serviceDescriptor = typesHandlers.Select(x => new ServiceDescriptor(x, x, ServiceLifetime.Scoped));
             services.TryAdd(serviceDescriptor);
-            services.AddSingleton<ConcurrentDictionary<Type, Type>>(serviceProvider => handlerInfo);
+            services.AddSingleton(serviceProvider => handlerInfo);
         }
 
 

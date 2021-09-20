@@ -10,6 +10,7 @@ namespace Generic_Variance
         {
             ContravariantGeneric();
             CovariantGeneric();
+            AnotherExample();
         }
 
         public static void ContravariantGeneric()
@@ -35,6 +36,56 @@ namespace Generic_Variance
             // This is OK here:
             IGenericCovariance<BaseClass> genericBase = genericMiddle;
             BaseClass baseResult = genericBase.Method();
+        }
+    }
+
+
+    // Another Example
+
+    /// <summary>
+    /// Combining the two interfaces (Covariant and Contravariant),
+    /// we receive one Invariant interface
+    /// </summary>
+    public interface ISequence<T> :
+        ISequenceReader<T>,
+        ISequenceWriter<T>
+    {
+    }
+
+    /// <summary>
+    /// Covariance only applies to types
+    /// that are being returned from methods
+    /// in a generic interface
+    /// </summary>
+    public interface ISequenceReader<out T>
+    {
+        T Read();
+    }
+
+    /// <summary>
+    /// Contravariance only applies to types
+    /// that are being written or provided to methods
+    /// in a generic interface,
+    /// as parameters.
+    /// </summary>
+    public interface ISequenceWriter<in T>
+    {
+        void Write(T arg);
+    }
+
+
+    public class Sequence<T> : ISequence<T>
+    {
+        private T obj;
+
+        public T Read()
+        {
+            return obj;
+        }
+
+        public void Write(T arg)
+        {
+            obj = arg;
         }
     }
 }
