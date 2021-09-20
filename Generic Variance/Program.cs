@@ -8,8 +8,9 @@ namespace Generic_Variance
     {
         static void Main(string[] args)
         {
-            ContravariantGeneric();
-            CovariantGeneric();
+            //ContravariantGeneric();
+            //CovariantGeneric();
+            VarianceExample();
         }
 
         public static void ContravariantGeneric()
@@ -35,6 +36,25 @@ namespace Generic_Variance
             // This is OK here:
             IGenericCovariance<BaseClass> genericBase = genericMiddle;
             BaseClass baseResult = genericBase.Method();
+        }
+
+
+
+        public static void VarianceExample()
+        {
+            ISequence<string> sequence = new Sequence<string>();
+            Write(sequence, "123");
+            Print(sequence);
+        }
+
+        public static void Print(ISequenceReader<string> sequence)
+        {
+            System.Console.WriteLine(sequence.Read());
+        }
+
+        public static void Write(ISequenceWriter<string> sequence, string data)
+        {
+            sequence.Write(data);
         }
     }
 
