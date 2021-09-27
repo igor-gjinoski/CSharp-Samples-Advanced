@@ -24,8 +24,12 @@ namespace RabbitMQProducer.Controllers
         {
             if (string.IsNullOrEmpty(weather))
                 return BadRequest();
-            
-            var fullWeather = new WeatherForecast { Summary = weather };
+
+            WeatherForecast fullWeather = 
+                new() 
+                { 
+                    Summary = weather 
+                };
 
             Data.Add(fullWeather);
             _weatherPublisher.Publish(fullWeather);
