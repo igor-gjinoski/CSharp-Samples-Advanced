@@ -21,7 +21,7 @@ namespace RabbitMQProducer
         {
             services.Configure<RabbitMqConfiguration>(
                 Configuration.GetSection("RabbitMqConfiguration"));
-            services.AddScoped<IWeatherPublisher, WeatherPublisher>();
+            services.AddTransient<IWeatherPublisher, WeatherPublisher>();
             services.AddControllers();
         }
 
