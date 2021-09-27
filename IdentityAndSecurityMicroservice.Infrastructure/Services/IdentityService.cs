@@ -1,13 +1,16 @@
 ﻿using System.Security.Claims;
 using System.Threading;
 using System.Threading.Tasks;
+using System.IdentityModel.Tokens.Jwt;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Options;
-using Microsoft.AspNetCore.Mvc;
-using IdentityAndSecurityMicroservice.RequestModel;
-using IdentityAndSecurityMicroservice.Entities;
+using Microsoft.IdentityModel.Tokens;
+using IdentityAndSecurityMicroservice.MongoDB.Entities;
+using IdentityAndSecurityMicroservice.Application;
+using IdentityAndSecurityMicroservice.Application.RequestModels;
+using IdentityAndSecurityMicroservice.Application.ResponseModels;
 
-namespace IdentityAndSecurityMicroservice.Services
+namespace IdentityAndSecurityMicroservice.Services 
 {
     public class IdentityService : IIdentityService
     {
@@ -23,26 +26,21 @@ namespace IdentityAndSecurityMicroservice.Services
         }
 
 
-        public async Task<IActionResult> RegisterAsync(RegisterRequestModel requestModel, CancellationToken cancellationToken)
+        public async Task<RegisterSuccessModel> RegisterAsync(RegisterRequestModel requestModel, CancellationToken cancellationToken)
         {
-            ApplicationUser user = new ApplicationUser();
-
-            var identityResult = await _userManager.CreateAsync(user, requestModel.Password);
-            var result = new RegisterSuccessModel(identityResult.Succeeded, identityResult.Errors);
-
-            return result;
+            ApplicationUser user = new();
+            await _userManager.CreateAsync(user, requestModel.Password);
+            return new RegisterSuccessModel(user.Id);
         }
 
 
-        public async Task<IActionResult> LoginAsync(LoginRequestModel requestModel, CancellationToken cancellationToken)
+        public async Task<LoginSuccessModel> LoginAsync(LoginRequestModel requestModel, CancellationToken cancellationToken)
         {
             ApplicationUser user = await _userManager.FindByNameAsync(requestModel.Username);
-            bool passwordValid = await _userManager.CheckPasswordAsync(user, requestModel.Password);
+            await _userManager.CheckPasswordAsync(user, requestModel.Password);
 
             var token = GenerateJwtToken(user);
-            var result = new LoginSuccessModel(user.Id, token);
-
-            return result;
+            return new LoginSuccessModel(token);
         }
 
 
@@ -54,7 +52,7 @@ namespace IdentityAndSecurityMicroservice.Services
             {
                 Subject = new ClaimsIdentity(new[]
                 {
-                    new Claim(ClaimTypes.NameIdentifier, user.Id),
+                    new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()),
                     new Claim(ClaimTypes.Name, user.UserName)
                 }),
                 Expires = System.DateTime.UtcNow.AddDays(7),

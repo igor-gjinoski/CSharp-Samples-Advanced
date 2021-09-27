@@ -1,5 +1,5 @@
 ﻿
-namespace IdentityAndSecurityMicroservice.Application.RequestModel
+namespace IdentityAndSecurityMicroservice.Application.RequestModels
 {
     public class RegisterRequestModel
     {

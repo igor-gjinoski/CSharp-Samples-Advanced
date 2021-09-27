@@ -9,3 +9,4 @@ namespace IdentityAndSecurityMicroservice.MongoDB.Entities
     {
     }
 }
+
