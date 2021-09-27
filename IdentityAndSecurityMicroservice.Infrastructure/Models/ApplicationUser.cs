@@ -2,7 +2,7 @@
 using MongoDbGenericRepository.Attributes;
 using System;
 
-namespace IdentityAndSecurityMicroservice.MongoDB.Entities
+namespace IdentityAndSecurityMicroservice.Infrastructure.Models
 {
     [CollectionName("Users")]
     public class ApplicationUser : MongoIdentityUser<Guid>

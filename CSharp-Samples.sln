@@ -105,8 +105,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdentityAndSecurityMicroser
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdentityAndSecurityMicroservice.Infrastructure", "IdentityAndSecurityMicroservice.Infrastructure\IdentityAndSecurityMicroservice.Infrastructure.csproj", "{C97AC760-274B-4CE1-85FC-51C77B082574}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdentityAndSecurityMicroservice.MongoDB", "IdentityAndSecurityMicroservice.MongoDB\IdentityAndSecurityMicroservice.MongoDB.csproj", "{860F3CE7-6E82-414D-8D60-422E9492A829}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Identity", "Identity", "{F7C959A3-0CBC-474D-BB63-A2966ED2D065}"
 EndProject
 Global
@@ -295,10 +293,6 @@ Global
 		{C97AC760-274B-4CE1-85FC-51C77B082574}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C97AC760-274B-4CE1-85FC-51C77B082574}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C97AC760-274B-4CE1-85FC-51C77B082574}.Release|Any CPU.Build.0 = Release|Any CPU
-		{860F3CE7-6E82-414D-8D60-422E9492A829}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{860F3CE7-6E82-414D-8D60-422E9492A829}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{860F3CE7-6E82-414D-8D60-422E9492A829}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{860F3CE7-6E82-414D-8D60-422E9492A829}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -317,7 +311,6 @@ Global
 		{1FA2E233-56A0-40C8-BA0D-D4A6504A70F9} = {F7C959A3-0CBC-474D-BB63-A2966ED2D065}
 		{445D18E9-F6B5-4F82-9184-FBDBFFC435CD} = {F7C959A3-0CBC-474D-BB63-A2966ED2D065}
 		{C97AC760-274B-4CE1-85FC-51C77B082574} = {F7C959A3-0CBC-474D-BB63-A2966ED2D065}
-		{860F3CE7-6E82-414D-8D60-422E9492A829} = {F7C959A3-0CBC-474D-BB63-A2966ED2D065}
 		{F7C959A3-0CBC-474D-BB63-A2966ED2D065} = {91A52DC0-B8C1-4FA0-B2FF-83F2A9648E9A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution

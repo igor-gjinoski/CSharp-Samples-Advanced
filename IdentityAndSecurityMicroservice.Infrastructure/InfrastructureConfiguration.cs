@@ -1,11 +1,12 @@
 ﻿using IdentityAndSecurityMicroservice.Application;
-using IdentityAndSecurityMicroservice.MongoDB.Entities;
+using IdentityAndSecurityMicroservice.Infrastructure.Models;
 using IdentityAndSecurityMicroservice.Services;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using MongoDB.Bson;
 using MongoDB.Bson.Serialization;
 using MongoDB.Bson.Serialization.Serializers;
+using MongoDB.Driver;
 
 namespace IdentityAndSecurityMicroservice.Infrastructure
 {
@@ -13,31 +14,22 @@ namespace IdentityAndSecurityMicroservice.Infrastructure
     {
         public static IServiceCollection AddInfrastructure(this IServiceCollection services, IConfiguration configuration)
         {
-            return services
-                .AddIdentity(configuration)
-                .AddServices();
-        }
-
-
-        private static IServiceCollection AddIdentity(
-            this IServiceCollection services,
-            IConfiguration configuration)
-        {
-            BsonSerializer.RegisterSerializer(new GuidSerializer(BsonType.String));
-
             var applicationSettings = configuration
                 .GetSection(nameof(ApplicationSettings))
                 .Get<ApplicationSettings>();
 
-            services
-                .AddIdentity<ApplicationUser, ApplicationRole>(options =>
-                {
-                    options.Password.RequiredLength = 6;
-                    options.Password.RequireDigit = false;
-                    options.Password.RequireLowercase = false;
-                    options.Password.RequireNonAlphanumeric = false;
-                    options.Password.RequireUppercase = false;
-                })
+            return services
+                .AddIdentity(applicationSettings)
+                .AddServices(applicationSettings);
+        }
+
+        private static IServiceCollection AddIdentity(
+            this IServiceCollection services,
+            ApplicationSettings applicationSettings)
+        {
+            BsonSerializer.RegisterSerializer(new GuidSerializer(BsonType.String));
+
+            services.AddIdentity<ApplicationUser, ApplicationRole>()
                 .AddMongoDbStores<ApplicationUser, ApplicationRole, System.Guid>
                 (
                     applicationSettings.MongoDbSettings.ConnectionString,
@@ -47,10 +39,16 @@ namespace IdentityAndSecurityMicroservice.Infrastructure
             return services;
         }
 
-
         private static IServiceCollection AddServices(
-            this IServiceCollection services)
+            this IServiceCollection services,
+            ApplicationSettings applicationSettings)
         {
+            services.AddSingleton<IMongoClient>(
+                serviceProvider =>
+                {
+                    return new MongoClient(applicationSettings.MongoDbSettings.ConnectionString);
+                });
+
             return services.AddScoped<IIdentityService, IdentityService>();
         }
     }

@@ -5,6 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="AspNetCore.Identity.MongoDbCore" Version="3.1.1" />
     <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="5.0.0" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="5.0.0" />
     <PackageReference Include="MongoDB.Bson" Version="2.13.1" />
@@ -13,7 +14,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\IdentityAndSecurityMicroservice.Application\IdentityAndSecurityMicroservice.Application.csproj" />
-    <ProjectReference Include="..\IdentityAndSecurityMicroservice.MongoDB\IdentityAndSecurityMicroservice.MongoDB.csproj" />
   </ItemGroup>
 
 </Project>
