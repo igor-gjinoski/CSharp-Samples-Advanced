@@ -3,6 +3,8 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using RabbitMQCommon;
+using RabbitMQConsumer.Messaging;
 
 namespace RabbitMQConsumer
 {
@@ -17,7 +19,9 @@ namespace RabbitMQConsumer
 
         public void ConfigureServices(IServiceCollection services)
         {
-
+            services.Configure<RabbitMqConfiguration>(
+                Configuration.GetSection("RabbitMqConfiguration"));
+            services.AddHostedService<WeatherReceiver>();
             services.AddControllers();
         }
 
