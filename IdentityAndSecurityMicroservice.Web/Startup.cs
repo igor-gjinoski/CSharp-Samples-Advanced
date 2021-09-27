@@ -3,8 +3,10 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using IdentityAndSecurityMicroservice.Application;
+using IdentityAndSecurityMicroservice.Infrastructure;
 
-namespace IdentityAndSecurityMicroservice
+namespace IdentityAndSecurityMicroservice.Web
 {
     public class Startup
     {
@@ -17,8 +19,10 @@ namespace IdentityAndSecurityMicroservice
 
         public void ConfigureServices(IServiceCollection services)
         {
-
-            services.AddControllers();
+            services
+                .AddApplication(Configuration)
+                .AddInfrastructure(Configuration)
+                .AddControllers();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)

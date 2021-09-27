@@ -99,7 +99,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RabbitMQCommon", "RabbitMQC
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Microservices", "Microservices", "{91A52DC0-B8C1-4FA0-B2FF-83F2A9648E9A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdentityAndSecurityMicroservice", "IdentityAndSecurityMicroservice\IdentityAndSecurityMicroservice.csproj", "{BB54F34B-471C-4EDA-990B-34B671E1C1B9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IdentityAndSecurityMicroservice", "IdentityAndSecurityMicroservice\IdentityAndSecurityMicroservice.csproj", "{BB54F34B-471C-4EDA-990B-34B671E1C1B9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdentityAndSecurityMicroservice.Web", "IdentityAndSecurityMicroservice.Web\IdentityAndSecurityMicroservice.Web.csproj", "{1FA2E233-56A0-40C8-BA0D-D4A6504A70F9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdentityAndSecurityMicroservice.Application", "IdentityAndSecurityMicroservice.Application\IdentityAndSecurityMicroservice.Application.csproj", "{445D18E9-F6B5-4F82-9184-FBDBFFC435CD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdentityAndSecurityMicroservice.Infrastructure", "IdentityAndSecurityMicroservice.Infrastructure\IdentityAndSecurityMicroservice.Infrastructure.csproj", "{C97AC760-274B-4CE1-85FC-51C77B082574}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdentityAndSecurityMicroservice.MongoDB", "IdentityAndSecurityMicroservice.MongoDB\IdentityAndSecurityMicroservice.MongoDB.csproj", "{860F3CE7-6E82-414D-8D60-422E9492A829}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -279,6 +287,22 @@ Global
 		{BB54F34B-471C-4EDA-990B-34B671E1C1B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BB54F34B-471C-4EDA-990B-34B671E1C1B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BB54F34B-471C-4EDA-990B-34B671E1C1B9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1FA2E233-56A0-40C8-BA0D-D4A6504A70F9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1FA2E233-56A0-40C8-BA0D-D4A6504A70F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1FA2E233-56A0-40C8-BA0D-D4A6504A70F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1FA2E233-56A0-40C8-BA0D-D4A6504A70F9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{445D18E9-F6B5-4F82-9184-FBDBFFC435CD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{445D18E9-F6B5-4F82-9184-FBDBFFC435CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{445D18E9-F6B5-4F82-9184-FBDBFFC435CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{445D18E9-F6B5-4F82-9184-FBDBFFC435CD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C97AC760-274B-4CE1-85FC-51C77B082574}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C97AC760-274B-4CE1-85FC-51C77B082574}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C97AC760-274B-4CE1-85FC-51C77B082574}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C97AC760-274B-4CE1-85FC-51C77B082574}.Release|Any CPU.Build.0 = Release|Any CPU
+		{860F3CE7-6E82-414D-8D60-422E9492A829}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{860F3CE7-6E82-414D-8D60-422E9492A829}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{860F3CE7-6E82-414D-8D60-422E9492A829}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{860F3CE7-6E82-414D-8D60-422E9492A829}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -295,6 +319,10 @@ Global
 		{214FFAF1-5FFE-4815-A400-1359D03612D3} = {FF69C051-3423-4493-88CD-FAB7C1E20DD1}
 		{9B80D9E6-525D-46F8-8F61-B2B3631A31BD} = {FF69C051-3423-4493-88CD-FAB7C1E20DD1}
 		{BB54F34B-471C-4EDA-990B-34B671E1C1B9} = {91A52DC0-B8C1-4FA0-B2FF-83F2A9648E9A}
+		{1FA2E233-56A0-40C8-BA0D-D4A6504A70F9} = {91A52DC0-B8C1-4FA0-B2FF-83F2A9648E9A}
+		{445D18E9-F6B5-4F82-9184-FBDBFFC435CD} = {91A52DC0-B8C1-4FA0-B2FF-83F2A9648E9A}
+		{C97AC760-274B-4CE1-85FC-51C77B082574} = {91A52DC0-B8C1-4FA0-B2FF-83F2A9648E9A}
+		{860F3CE7-6E82-414D-8D60-422E9492A829} = {91A52DC0-B8C1-4FA0-B2FF-83F2A9648E9A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {DEFFBA2A-0813-4F02-B697-FEFED76EDB94}

@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\IdentityAndSecurityMicroservice.Application\IdentityAndSecurityMicroservice.Application.csproj" />
+    <ProjectReference Include="..\IdentityAndSecurityMicroservice.Infrastructure\IdentityAndSecurityMicroservice.Infrastructure.csproj" />
+  </ItemGroup>
+
+</Project>
