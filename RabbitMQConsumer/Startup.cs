@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using MassTransit;
 using RabbitMQCommon;
 using RabbitMQConsumer.Messaging;
 
@@ -19,10 +20,34 @@ namespace RabbitMQConsumer
 
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddControllers();
+
+            // RabbitMQ
             services.Configure<RabbitMqConfiguration>(
                 Configuration.GetSection("RabbitMqConfiguration"));
             services.AddHostedService<WeatherReceiver>();
-            services.AddControllers();
+
+            // RabbitMQ with MassTransit
+            services
+                .AddMassTransit(mt =>
+                {
+                    var consumer = typeof(WeatherReceiver);
+
+                    mt.AddConsumer(consumer);
+                    mt.UsingRabbitMq((context, cfg) =>
+                    {
+                        cfg.Host("localhost", "/", h =>
+                        {
+                            h.Username("guest");
+                            h.Password("guest");
+                        });
+
+                        cfg.ReceiveEndpoint(consumer.FullName, endpoint =>
+                        {
+                            endpoint.ConfigureConsumer(context, consumer);
+                        });
+                    });
+                }).AddMassTransitHostedService();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
