@@ -1,6 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using MassTransit;
+using Microsoft.AspNetCore.Mvc;
 using RabbitMQProducer.Messaging;
-using System.Collections.Generic;
 
 namespace RabbitMQProducer.Controllers
 {
@@ -8,15 +8,16 @@ namespace RabbitMQProducer.Controllers
     [Route("[controller]")]
     public class WeatherForecastController : ControllerBase
     {
-        private static readonly List<WeatherForecast> Data = new List<WeatherForecast>
+        private readonly IBus _massTransitPublisher;
+        private readonly IWeatherPublisher _rabbitMqPublisher;
+
+        public WeatherForecastController(
+            IWeatherPublisher weatherPublisher,
+            IBus massTransitPublisher)
         {
-            new WeatherForecast { Summary = "Cold" }
-        };
-
-        private readonly IWeatherPublisher _weatherPublisher;
-
-        public WeatherForecastController(IWeatherPublisher weatherPublisher)
-            => _weatherPublisher = weatherPublisher;
+            _rabbitMqPublisher = weatherPublisher;
+            _massTransitPublisher = massTransitPublisher;
+        } 
 
 
         [HttpGet]
@@ -31,10 +32,10 @@ namespace RabbitMQProducer.Controllers
                     Summary = weather 
                 };
 
-            Data.Add(fullWeather);
-            _weatherPublisher.Publish(fullWeather);
+            _rabbitMqPublisher.Publish(fullWeather);
+            _massTransitPublisher.Publish(fullWeather);
 
-            return this.Ok();
+            return Ok();
         }
     }
 }

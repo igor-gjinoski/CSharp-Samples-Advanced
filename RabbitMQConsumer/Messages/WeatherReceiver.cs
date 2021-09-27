@@ -40,8 +40,7 @@ namespace RabbitMQConsumer.Messaging
                 var weather = JsonSerializer.Deserialize<WeatherForecast>(ea.Body.ToArray());
 
                 // TODO: Do something with the data
-                System.Console.WriteLine(weather.Date);
-                System.Console.WriteLine(weather.Summary);
+                System.Console.WriteLine(nameof(WeatherReceiver));
                 
                 _channel.BasicAck(ea.DeliveryTag, false);
             };

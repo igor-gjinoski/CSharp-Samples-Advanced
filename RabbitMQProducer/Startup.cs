@@ -19,10 +19,15 @@ namespace RabbitMQProducer
 
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddControllers();
+
+            // RabbitMQ
             services.Configure<RabbitMqConfiguration>(
                 Configuration.GetSection("RabbitMqConfiguration"));
             services.AddTransient<IWeatherPublisher, WeatherPublisher>();
-            services.AddControllers();
+
+            // RabbitMQ with MassTransit
+            services.AddMassTransitMessaging();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
