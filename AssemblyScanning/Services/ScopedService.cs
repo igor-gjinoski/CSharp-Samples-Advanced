@@ -1,7 +1,9 @@
 ﻿
 namespace AssemblyScanning.Services
 {
-    public class ScopedService
+    public class ScopedService : IScopedService
     {
+        public void Print()
+            => System.Console.WriteLine(nameof(ScopedService));
     }
 }

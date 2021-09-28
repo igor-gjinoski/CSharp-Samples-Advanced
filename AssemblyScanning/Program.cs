@@ -17,7 +17,8 @@ namespace AssemblyScanning
 
             using (var scope = serviceProvider.CreateScope())
             {
-                var operationService = serviceProvider.GetService<IScopedService>();
+                var scopedService = serviceProvider.GetService<IScopedService>();
+                scopedService.Print();
                 scope.Dispose();
             }
         }

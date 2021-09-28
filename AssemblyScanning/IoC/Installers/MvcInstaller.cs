@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.Configuration;
+﻿using AssemblyScanning.Services;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace AssemblyScanning.IoC.Installers
@@ -7,7 +8,7 @@ namespace AssemblyScanning.IoC.Installers
     {
         public void AddServices(IServiceCollection services, IConfiguration configuration)
         {
-            throw new System.NotImplementedException();
+            services.AddScoped<IScopedService, ScopedService>();
         }
     }
 }
