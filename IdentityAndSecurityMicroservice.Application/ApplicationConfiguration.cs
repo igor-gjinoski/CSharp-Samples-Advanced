@@ -11,6 +11,9 @@ namespace IdentityAndSecurityMicroservice.Application
                      configuration.GetSection(nameof(ApplicationSettings)),
                      options => options.BindNonPublicProperties = true);
 
+            services.Configure<IdentityServerSettings>(
+                     configuration.GetSection(nameof(IdentityServerSettings)));
+
             return services;
         }
     }

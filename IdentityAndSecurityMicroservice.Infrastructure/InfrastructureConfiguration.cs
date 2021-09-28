@@ -20,10 +20,14 @@ namespace IdentityAndSecurityMicroservice.Infrastructure
                 .GetSection(nameof(ApplicationSettings))
                 .Get<ApplicationSettings>();
 
+            var identityServerSettings = configuration
+                .GetSection(nameof(IdentityServerSettings))
+                .Get<IdentityServerSettings>();
+
             return services
                 .AddIdentity(applicationSettings)
-                .AddIdentityServer(applicationSettings)
-                .AddJSONWebTokenBearer(configuration)
+                .AddIdentityServer(identityServerSettings)
+                .AddJSONWebTokenBearer(applicationSettings)
                 .AddServices(applicationSettings);
         }
 
@@ -45,26 +49,29 @@ namespace IdentityAndSecurityMicroservice.Infrastructure
 
         private static IServiceCollection AddIdentityServer(
             this IServiceCollection services,
-            ApplicationSettings applicationSettings)
+            IdentityServerSettings identityServerSettings)
         {
-            IdentityServerSettings identityServerSettings = new();
             services
-                .AddIdentityServer()
+                .AddIdentityServer(options =>
+                {
+                    options.Events.RaiseSuccessEvents = true;
+                    options.Events.RaiseFailureEvents = true;
+                    options.Events.RaiseErrorEvents = true;
+                })
+                .AddAspNetIdentity<ApplicationUser>()
                 .AddInMemoryApiScopes(identityServerSettings.ApiScopes)
-                .AddInMemoryClients(identityServerSettings.Clients);
+                .AddInMemoryClients(identityServerSettings.Clients)
+                .AddInMemoryIdentityResources(identityServerSettings.IdentityResources)
+                .AddDeveloperSigningCredential();
 
             return services;
         }
 
         private static IServiceCollection AddJSONWebTokenBearer(
             this IServiceCollection services,
-            IConfiguration configuration)
+            ApplicationSettings applicationSettings)
         {
-            var secret = configuration
-                .GetSection(nameof(ApplicationSettings))
-                .GetValue<string>(nameof(ApplicationSettings.Secret));
-
-            var key = System.Text.Encoding.ASCII.GetBytes(secret);
+            var key = System.Text.Encoding.ASCII.GetBytes(applicationSettings.Secret);
 
             services
                 .AddAuthentication(authentication =>
