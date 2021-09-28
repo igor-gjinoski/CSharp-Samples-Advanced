@@ -99,15 +99,17 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RabbitMQCommon", "RabbitMQC
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Microservices", "Microservices", "{91A52DC0-B8C1-4FA0-B2FF-83F2A9648E9A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdentityAndSecurityMicroservice.Web", "IdentityAndSecurityMicroservice.Web\IdentityAndSecurityMicroservice.Web.csproj", "{1FA2E233-56A0-40C8-BA0D-D4A6504A70F9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IdentityAndSecurityMicroservice.Web", "IdentityAndSecurityMicroservice.Web\IdentityAndSecurityMicroservice.Web.csproj", "{1FA2E233-56A0-40C8-BA0D-D4A6504A70F9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdentityAndSecurityMicroservice.Application", "IdentityAndSecurityMicroservice.Application\IdentityAndSecurityMicroservice.Application.csproj", "{445D18E9-F6B5-4F82-9184-FBDBFFC435CD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IdentityAndSecurityMicroservice.Application", "IdentityAndSecurityMicroservice.Application\IdentityAndSecurityMicroservice.Application.csproj", "{445D18E9-F6B5-4F82-9184-FBDBFFC435CD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdentityAndSecurityMicroservice.Infrastructure", "IdentityAndSecurityMicroservice.Infrastructure\IdentityAndSecurityMicroservice.Infrastructure.csproj", "{C97AC760-274B-4CE1-85FC-51C77B082574}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IdentityAndSecurityMicroservice.Infrastructure", "IdentityAndSecurityMicroservice.Infrastructure\IdentityAndSecurityMicroservice.Infrastructure.csproj", "{C97AC760-274B-4CE1-85FC-51C77B082574}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Identity", "Identity", "{F7C959A3-0CBC-474D-BB63-A2966ED2D065}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AssemblyScanning", "AssemblyScanning\AssemblyScanning.csproj", "{067C7247-77A6-4F86-B1CC-4B1A1BEBA64D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AssemblyScanning", "AssemblyScanning\AssemblyScanning.csproj", "{067C7247-77A6-4F86-B1CC-4B1A1BEBA64D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EnumPerformanceTrap", "EnumPerformanceTrap\EnumPerformanceTrap.csproj", "{3EC8EC03-FA78-4FEB-AB97-08669789C57D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -299,6 +301,10 @@ Global
 		{067C7247-77A6-4F86-B1CC-4B1A1BEBA64D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{067C7247-77A6-4F86-B1CC-4B1A1BEBA64D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{067C7247-77A6-4F86-B1CC-4B1A1BEBA64D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3EC8EC03-FA78-4FEB-AB97-08669789C57D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3EC8EC03-FA78-4FEB-AB97-08669789C57D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3EC8EC03-FA78-4FEB-AB97-08669789C57D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3EC8EC03-FA78-4FEB-AB97-08669789C57D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -15,12 +15,10 @@ namespace AssemblyScanning
             IConfiguration configuration = new ConfigurationBuilder().Build();
             IServiceProvider serviceProvider = BuildServiceProvider(services, configuration);
 
-            using (var scope = serviceProvider.CreateScope())
-            {
-                var scopedService = serviceProvider.GetService<IScopedService>();
-                scopedService.Print();
-                scope.Dispose();
-            }
+            using var scope = serviceProvider.CreateScope();
+            var scopedService = serviceProvider.GetService<IScopedService>();
+            scopedService.Print();
+            scope.Dispose();
         }
 
         public static IServiceProvider BuildServiceProvider(IServiceCollection services, IConfiguration configuration)
