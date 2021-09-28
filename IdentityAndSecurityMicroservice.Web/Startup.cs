@@ -34,6 +34,7 @@ namespace IdentityAndSecurityMicroservice.Web
 
             app.UseHttpsRedirection()
                .UseRouting()
+               .UseIdentityServer()
                .UseAuthorization()
                .UseEndpoints(endpoints =>
                {
