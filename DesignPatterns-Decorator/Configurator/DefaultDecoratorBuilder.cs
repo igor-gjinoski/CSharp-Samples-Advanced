@@ -15,10 +15,8 @@ namespace DesignPatterns.Configurator
         private Type _serviceType;
         private IList<Type> _decorators;
 
-        private static readonly ConcurrentDictionary<Type, SemaphoreSlim> _lockService =
-            new ConcurrentDictionary<Type, SemaphoreSlim>();
-
-        private static readonly object BuildLock = new object();
+        private static readonly ConcurrentDictionary<Type, SemaphoreSlim> _lockService = new();
+        private static readonly object _buildLock = new();
 
         public IServiceDecoratorConfigurator<TServiceInterface> AddDecorator<TDecorator>()
             where TDecorator : TServiceInterface
@@ -40,12 +38,25 @@ namespace DesignPatterns.Configurator
         {
             if (!_lockService.TryGetValue(_serviceType, out var @lock))
             {
-                lock (BuildLock)
+                bool isEntered = false;
+                try
                 {
+                    Monitor.TryEnter(_buildLock, 2000, ref isEntered);
+                    if (!isEntered)
+                    {
+                        throw new System.Exception();
+                    }
                     if (!_lockService.TryGetValue(_serviceType, out @lock))
                     {
                         @lock = new SemaphoreSlim(1, 1);
                         _lockService.TryAdd(_serviceType, @lock);
+                    }
+                }
+                finally
+                {
+                    if (isEntered)
+                    {
+                        Monitor.Exit(_buildLock);
                     }
                 }
             }
@@ -56,8 +67,9 @@ namespace DesignPatterns.Configurator
 
                 @lock.Wait();
 
-                if (_serviceType is null) // throw exception
+                if (_serviceType is null)
                 {
+                    throw new System.Exception();
                 }
 
                 var serviceInstance = CreateInstance(provider, _serviceType);
