@@ -21,7 +21,7 @@ namespace DesignPatterns.Configurator
         public IServiceDecoratorConfigurator<TServiceInterface> AddDecorator<TDecorator>()
             where TDecorator : TServiceInterface
         {
-            if (_decorators == null)
+            if (_decorators is null)
                 _decorators = new List<Type>();
 
             _decorators.Add(typeof(TDecorator));
