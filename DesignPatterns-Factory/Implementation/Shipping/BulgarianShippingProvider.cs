@@ -18,7 +18,8 @@ namespace DesignPatterns_Factory.Implementation.Shipping
                 order.Sender.Country);
 
             return $"To: {order.Recipient.To}\n" +
-                   $"Shipping Cost: {shippingCost}";
+                   $"Shipping Cost: {shippingCost}" +
+                   $"Country of Origin: {order.Sender.Country}\n";
         }
     }
 }
