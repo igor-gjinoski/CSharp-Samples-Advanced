@@ -1,4 +1,4 @@
-﻿using DesignPatterns_Factory.Implementation.Providers.Utils;
+﻿using DesignPatterns_Factory.Implementation.Shipping.Utils;
 using System.Collections.Generic;
 
 namespace DesignPatterns_Factory.Implementation.Models

@@ -1,5 +1,6 @@
 ﻿using DesignPatterns_Factory.Implementation;
 using DesignPatterns_Factory.Implementation.Models;
+using DesignPatterns_Factory.Implementation.Shipping.Factories;
 
 namespace DesignPatterns_Factory
 {
@@ -7,6 +8,7 @@ namespace DesignPatterns_Factory
     {
         static void Main(string[] args)
         {
+            #region PLACE ORDER
             var senderCountry = "Bulgaria";
             var recipientCountry = "Norway";
 
@@ -27,8 +29,10 @@ namespace DesignPatterns_Factory
 
             var item = new Item("Id", "ItemName", 100m);
             order.Items.Add(item, 1);
+            #endregion
 
-            var cart = new Factory(order);
+            var shippingProviderFactory = new StandardShippingProviderFactory();
+            var cart = new ShoppingCart(order, shippingProviderFactory);
             var shipping = cart.Finalize();
         }
     }
