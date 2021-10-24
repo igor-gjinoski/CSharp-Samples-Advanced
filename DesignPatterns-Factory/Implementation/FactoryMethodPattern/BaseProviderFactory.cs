@@ -1,8 +1,9 @@
-﻿using DesignPatterns_Factory.Implementation.Utils;
+﻿using DesignPatterns_Factory.Implementation.Shipping.Providers;
+using DesignPatterns_Factory.Implementation.Utils;
 using System;
 using System.Collections.Generic;
 
-namespace DesignPatterns_Factory.Implementation.Shipping.Factories
+namespace DesignPatterns_Factory.Implementation.FactoryMethodPattern
 {
     public abstract class BaseProviderFactory
     {

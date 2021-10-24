@@ -1,7 +1,7 @@
-﻿using DesignPatterns_Factory.Implementation.Abstractions;
+﻿using DesignPatterns_Factory.Implementation.Shipping.Providers;
 using System;
 
-namespace DesignPatterns_Factory.Implementation.Shipping.Factories
+namespace DesignPatterns_Factory.Implementation.FactoryMethodPattern
 {
     public class StandardShippingProviderFactory : BaseProviderFactory, IProviderFactory
     {
