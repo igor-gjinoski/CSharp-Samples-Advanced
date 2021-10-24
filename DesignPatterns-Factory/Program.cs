@@ -1,6 +1,8 @@
 ﻿using DesignPatterns_Factory.Implementation;
+using DesignPatterns_Factory.Implementation.Abstractions;
 using DesignPatterns_Factory.Implementation.Models;
 using DesignPatterns_Factory.Implementation.Shipping.Factories;
+using System;
 
 namespace DesignPatterns_Factory
 {
@@ -31,9 +33,46 @@ namespace DesignPatterns_Factory
             order.Items.Add(item, 1);
             #endregion
 
-            var shippingProviderFactory = new StandardShippingProviderFactory();
-            var cart = new ShoppingCart(order, shippingProviderFactory);
+            /* Factory Method Pattern */
+            IProviderFactory providerFactory = new StandardShippingProviderFactory();
+            var cart = new ShoppingCart(order, providerFactory);
             var shipping = cart.Finalize();
+
+
+            /* Generic Factory Pattern */
+            ProductFactory.Create<ConcreteFactory>();
+        }
+    }
+
+
+    public static class ProductFactory
+    {
+        public static T Create<T>()
+            where T : Factory, new()
+        {
+            try
+            {
+                var obj = new T();
+                obj.PostConstruction();
+                return obj;
+            }
+            catch (Exception)
+            {
+                return default;
+            }
+        }
+    }
+
+    public abstract class Factory
+    {
+        protected internal abstract void PostConstruction();
+    }
+
+    public class ConcreteFactory : Factory
+    {
+        protected internal override void PostConstruction()
+        {
+            Console.WriteLine($"PostConstruction from: {nameof(ConcreteFactory)}");
         }
     }
 }

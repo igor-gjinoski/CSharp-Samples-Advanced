@@ -6,4 +6,8 @@
     <RootNamespace>DesignPatterns_Factory</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="Implementation\GenericFactoryPattern\" />
+  </ItemGroup>
+
 </Project>

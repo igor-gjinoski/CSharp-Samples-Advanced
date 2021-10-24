@@ -1,15 +1,15 @@
-﻿using DesignPatterns_Factory.Implementation.Models;
+﻿using DesignPatterns_Factory.Implementation.Abstractions;
+using DesignPatterns_Factory.Implementation.Models;
 using DesignPatterns_Factory.Implementation.Shipping.Utils;
-using DesignPatterns_Factory.Implementation.Shipping.Factories;
 
 namespace DesignPatterns_Factory.Implementation
 {
     public class ShoppingCart
     {
         private readonly Order _order;
-        private readonly BaseProviderFactory _shippingProviderFactory;
+        private readonly IProviderFactory _shippingProviderFactory;
 
-        public ShoppingCart(Order order, BaseProviderFactory shippingProviderFactory)
+        public ShoppingCart(Order order, IProviderFactory shippingProviderFactory)
         {
             _order = order;
             _shippingProviderFactory = shippingProviderFactory;

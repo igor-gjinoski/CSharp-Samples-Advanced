@@ -1,10 +1,11 @@
-﻿using System;
+﻿using DesignPatterns_Factory.Implementation.Abstractions;
+using System;
 
 namespace DesignPatterns_Factory.Implementation.Shipping.Factories
 {
-    public class StandardShippingProviderFactory : BaseProviderFactory
+    public class StandardShippingProviderFactory : BaseProviderFactory, IProviderFactory
     {
-        public override BaseProvider CreateShippingProvider(string country)
+        public BaseProvider CreateShippingProvider(string country)
         {
             Providers.TryGetValue(country, out var provider);
             if (provider is null)
