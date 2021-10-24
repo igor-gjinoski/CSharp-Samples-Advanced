@@ -1,5 +1,5 @@
 ﻿
-namespace DesignPatterns_Factory.Implementation.Shipping.Utils
+namespace DesignPatterns_Factory.Implementation.Utils
 {
     public enum ShippingStatus
     {

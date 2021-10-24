@@ -1,6 +1,6 @@
 ﻿using DesignPatterns_Factory.Implementation.Abstractions;
 using DesignPatterns_Factory.Implementation.Models;
-using DesignPatterns_Factory.Implementation.Shipping.Utils;
+using DesignPatterns_Factory.Implementation.Utils;
 
 namespace DesignPatterns_Factory.Implementation
 {
