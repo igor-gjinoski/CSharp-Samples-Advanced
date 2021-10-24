@@ -111,7 +111,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AssemblyScanning", "Assembl
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EnumPerformanceTrap", "EnumPerformanceTrap\EnumPerformanceTrap.csproj", "{3EC8EC03-FA78-4FEB-AB97-08669789C57D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Regex", "Regex\Regex.csproj", "{3D82B05E-294F-4B2E-A618-0F8A1BEFEE8C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Regex", "Regex\Regex.csproj", "{3D82B05E-294F-4B2E-A618-0F8A1BEFEE8C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesignPatterns-Factory", "DesignPatterns-Factory\DesignPatterns-Factory.csproj", "{F4A179D7-5C94-4CE7-A1F3-F26188986F21}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -311,6 +313,10 @@ Global
 		{3D82B05E-294F-4B2E-A618-0F8A1BEFEE8C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3D82B05E-294F-4B2E-A618-0F8A1BEFEE8C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3D82B05E-294F-4B2E-A618-0F8A1BEFEE8C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F4A179D7-5C94-4CE7-A1F3-F26188986F21}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F4A179D7-5C94-4CE7-A1F3-F26188986F21}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F4A179D7-5C94-4CE7-A1F3-F26188986F21}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F4A179D7-5C94-4CE7-A1F3-F26188986F21}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
