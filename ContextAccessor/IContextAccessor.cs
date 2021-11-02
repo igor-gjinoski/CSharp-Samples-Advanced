@@ -1,5 +1,5 @@
 ﻿
-namespace AsyncLocalContextAccessor
+namespace ContextAccessor
 {
     public interface IContextAccessor<TContext>
     {
