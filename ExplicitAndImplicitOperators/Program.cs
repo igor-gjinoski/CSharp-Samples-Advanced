@@ -40,6 +40,8 @@ namespace ExplicitAndImplicitOperators
             };
     }
 
+
+    // The only way to use multiple params with operator -> Tuple
     class Person
     {
         public string Name { get; set; }
