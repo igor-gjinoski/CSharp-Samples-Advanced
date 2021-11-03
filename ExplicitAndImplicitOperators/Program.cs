@@ -11,8 +11,8 @@ namespace ExplicitAndImplicitOperators
     {
         static void Main()
         {
-            RoleWithImplicitOperator implicitRole = "";
-            RoleWithExplicitOperator explicitRole = (RoleWithExplicitOperator)"";
+            RoleWithImplicitOperator implicitRole = "dev";
+            RoleWithExplicitOperator explicitRole = (RoleWithExplicitOperator)"dev";
 
         }
     }
