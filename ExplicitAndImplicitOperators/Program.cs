@@ -14,6 +14,7 @@ namespace ExplicitAndImplicitOperators
             RoleWithImplicitOperator implicitRole = "dev";
             RoleWithExplicitOperator explicitRole = (RoleWithExplicitOperator)"dev";
 
+            Person person = (Name: "Kosstow", Age: 29);
         }
     }
 
@@ -36,6 +37,19 @@ namespace ExplicitAndImplicitOperators
             => new()
             {
                 RoleName = roleName
+            };
+    }
+
+    class Person
+    {
+        public string Name { get; set; }
+        public int Age { get; set; }
+
+        public static implicit operator Person((string Name, int Age) personalData)
+            => new()
+            {
+                Name = personalData.Name,
+                Age = personalData.Age
             };
     }
 }
