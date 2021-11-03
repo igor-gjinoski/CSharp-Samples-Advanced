@@ -6,9 +6,9 @@ namespace CacheControl.Attributes
     [AttributeUsage(AttributeTargets.Class | AttributeTargets.Method, Inherited = true, AllowMultiple = false)]
     public class CacheControlAttribute : ActionFilterAttribute
     {
-        private bool? _cacheNoStore;
-        private int? _cacheDuration;
-        private ResponseCacheLocation? _cacheLocation;
+        private readonly bool? _cacheNoStore;
+        private readonly int? _cacheDuration;
+        private readonly ResponseCacheLocation? _cacheLocation;
         
         public CacheControlAttribute()
             : this(ResponseCacheLocation.None, 1000)
