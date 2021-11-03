@@ -121,6 +121,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AsyncLocalModel", "AsyncLoc
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExplicitAndImplicitOperators", "ExplicitAndImplicitOperators\ExplicitAndImplicitOperators.csproj", "{7FF9FEAB-BD3B-4891-89A7-762C0DC668CF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CacheControl", "CacheControl\CacheControl.csproj", "{0196CE07-524A-44FB-B85C-94D3D470DED3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -335,6 +337,10 @@ Global
 		{7FF9FEAB-BD3B-4891-89A7-762C0DC668CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7FF9FEAB-BD3B-4891-89A7-762C0DC668CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7FF9FEAB-BD3B-4891-89A7-762C0DC668CF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0196CE07-524A-44FB-B85C-94D3D470DED3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0196CE07-524A-44FB-B85C-94D3D470DED3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0196CE07-524A-44FB-B85C-94D3D470DED3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0196CE07-524A-44FB-B85C-94D3D470DED3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
