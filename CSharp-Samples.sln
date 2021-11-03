@@ -115,9 +115,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Regex", "Regex\Regex.csproj
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DesignPatterns-Factory", "DesignPatterns-Factory\DesignPatterns-Factory.csproj", "{F4A179D7-5C94-4CE7-A1F3-F26188986F21}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContextAccessor", "ContextAccessor\ContextAccessor.csproj", "{1B8558F9-D67B-444D-A5A8-FB2554406154}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ContextAccessor", "ContextAccessor\ContextAccessor.csproj", "{1B8558F9-D67B-444D-A5A8-FB2554406154}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AsyncLocalModel", "AsyncLocalModel\AsyncLocalModel.csproj", "{41C78449-B389-488D-90B2-5FFE9791F6DF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AsyncLocalModel", "AsyncLocalModel\AsyncLocalModel.csproj", "{41C78449-B389-488D-90B2-5FFE9791F6DF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExplicitAndImplicitOperators", "ExplicitAndImplicitOperators\ExplicitAndImplicitOperators.csproj", "{7FF9FEAB-BD3B-4891-89A7-762C0DC668CF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -329,6 +331,10 @@ Global
 		{41C78449-B389-488D-90B2-5FFE9791F6DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{41C78449-B389-488D-90B2-5FFE9791F6DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{41C78449-B389-488D-90B2-5FFE9791F6DF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7FF9FEAB-BD3B-4891-89A7-762C0DC668CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7FF9FEAB-BD3B-4891-89A7-762C0DC668CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7FF9FEAB-BD3B-4891-89A7-762C0DC668CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7FF9FEAB-BD3B-4891-89A7-762C0DC668CF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
